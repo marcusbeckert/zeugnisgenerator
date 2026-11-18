@@ -1,0 +1,135 @@
+ZEUGNISGENERATOR – AUSFÜHRLICHE BESCHREIBUNG
+===========================================
+GitHub-Pages-Version: 3 Startbausteine und 1000 Offline-Textkombinationen
+Footer: Anwendung erstellt mit ChatGPT · Copyright Marcus Beckert
+
+1. ZWECK
+Die Anwendung hilft Lehrkräften, individuelle Lernentwicklungsberichte
+für die Klassenstufen 4 bis 6 zu formulieren. Sie arbeitet vollständig
+ohne externe KI-API und enthält ihre Formulierungslogik in einer HTML-Datei.
+Der fertig zusammengesetzte Bericht ist frei bearbeitbar.
+
+2. DATEIEN
+index.html: die komplette Anwendung.
+BESCHREIBUNG.txt: diese ausführliche Anleitung.
+
+3. STARTZUSTAND
+Beim ersten Start erscheinen nur die beiden Themenbereiche
+„Einleitungssatz“ und „Abschlusssatz“. Jeder enthält genau drei
+Startbausteine für „Allgemein“, drei für „1. Halbjahr“ und drei
+für „2. Halbjahr“. Die drei Zeiträume sind getrennt.
+Die beiden Rahmenbereiche bleiben bestehen. Ihre einzelnen
+Textbausteine können bearbeitet und gelöscht werden.
+
+4. NEUE THEMENBEREICHE
+Unter „Neuen Themenbereich hinzufügen“ eine Bezeichnung eingeben
+und auf „Bereich hinzufügen und Textbausteine erzeugen“ klicken.
+Der neue Bereich wird zwischen Einleitungssatz und Abschlusssatz
+eingefügt. Für ihn werden GENAU DREI Startbausteine für jeden
+der drei Zeiträume erstellt, also neun Startbausteine insgesamt.
+Neue Bereiche können umbenannt und vollständig gelöscht werden.
+Die Textbausteine können ebenfalls einzeln bearbeitet und
+dauerhaft gelöscht werden.
+
+5. 1000 VARIATIONEN JE THEMENBEREICH UND ZEITRAUM
+Für jeden frei benannten Themenbereich und jeden Zeitraum kann die
+Anwendung 1000 unterschiedliche Formulierungskombinationen erzeugen.
+Dafür werden zehn pädagogische Schwerpunkte, zehn Beobachtungsweisen
+und zehn Entwicklungsanregungen miteinander kombiniert
+(10 × 10 × 10 = 1000).
+Die Zeiträume haben unterschiedliche Formulierungsansätze:
+  Allgemein: aktuelle Lernweise und Entwicklungsmöglichkeiten
+  1. Halbjahr: erste Erfahrungen und Aufbau von Sicherheit
+  2. Halbjahr: Fortschritte und zunehmende Selbstständigkeit
+Die Kombinationen unterscheiden sich im Wortlaut und in ihren
+Schwerpunkten. Es wird NICHT garantiert, dass sich 1000 Aussagen
+auch pädagogisch und sinngemäß vollständig unterscheiden.
+Wiederkehrende Teilaussagen sind aufgrund der Kombinationstechnik
+möglich. Die Texte sollten vor der Verwendung fachlich geprüft werden.
+
+6. WEITERE VORSCHLÄGE ANZEIGEN
+In einem Themenbereich auf „3 weitere Formulierungen vorschlagen“
+klicken. Es erscheinen drei neue Offline-Vorschläge.
+Erneutes Klicken zeigt weitere Kombinationen. Die Vorschläge können
+vor dem Übernehmen direkt verändert werden.
+Über „Vorschlag übernehmen“ wird ein Vorschlag dauerhaft als
+zusätzlicher Baustein in den aktuellen Zeitraum aufgenommen.
+Der Generator versucht, bereits gespeicherte Bausteine nicht erneut
+anzubieten. Nach 1000 Kombinationen kann die Folge wieder beginnen.
+Die Anwendung verwendet dazu einen eigenen lokalen Zähler je
+Themenbereich und Zeitraum.
+
+7. BAUSTEINE VERWALTEN
+Die drei Startbausteine sind nur die anfängliche Auswahl.
+Eigene Textbausteine können beliebig ergänzt werden.
+Jeder Baustein kann bearbeitet, ausgewählt oder gelöscht werden.
+Die Auswahl gilt für den aktuell eingestellten Zeitraum.
+Die drei Zeiträume werden getrennt gespeichert.
+
+8. BERICHT ERSTELLEN
+  1. Namen und Anrede eintragen.
+  2. Klassenstufe 4, 5 oder 6 wählen.
+  3. Zeitraum auswählen.
+  4. Geeignete Bausteine auswählen.
+  5. Auf „Bericht erstellen / neu zusammensetzen“ klicken.
+  6. Den fertigen Text im Berichtsfeld nachbearbeiten.
+  7. Bericht kopieren oder als TXT beziehungsweise DOCX speichern.
+Ein erneutes Zusammensetzen überschreibt unter Umständen manuelle
+Änderungen im Berichtsfeld. Deshalb fertige Berichte rechtzeitig
+herunterladen.
+
+9. KEIN FELD FÜR SCHULJAHR
+Die frühere optionale Eingabe „Schuljahr“ bleibt entfernt.
+
+10. SICHERUNG UND IMPORT
+„Bereiche und Bausteine exportieren“ sichert die Sammlung als JSON.
+Über „Bereiche und Bausteine importieren“ kann sie geladen werden.
+Auch die Eingaben zu einem konkreten Bericht können als JSON
+gesichert und wiederhergestellt werden.
+Importierte ältere Sammlungen können andere Anzahlen von Bausteinen
+enthalten. Ein Import wird nicht automatisch auf drei reduziert.
+Personenbezogene JSON-Dateien und Zeugnisse vertraulich behandeln.
+
+11. STARTZUSTAND WIEDERHERSTELLEN
+Die Schaltfläche „Startzustand wiederherstellen (nur Einleitung und
+Abschluss)“ setzt die Themenbereiche auf die zwei Rahmenbereiche
+und deren ursprüngliche drei Bausteine je Zeitraum zurück.
+Dabei gehen eigene Bereiche und individuelle Anpassungen verloren.
+Vorher unbedingt eine JSON-Sicherung anlegen.
+
+12. BROWSERSPEICHER
+Diese Version verwendet neue lokale Speicherschlüssel, damit alte
+Sammlungen mit sechs Startbausteinen den neuen Startzustand nicht
+automatisch überschreiben. Bestehende Daten älterer Versionen
+werden nicht absichtlich gelöscht.
+Der Browser kann lokale Daten beim Löschen der Websitedaten oder
+beim Wechsel des Geräts verlieren. Regelmäßig JSON exportieren.
+
+13. GITHUB-PAGES-VERÖFFENTLICHUNG
+Repository: beckertmarcus/zeugnis
+Adresse: https://beckertmarcus.github.io/zeugnis/
+  1. Alte Sammlung gegebenenfalls als JSON sichern.
+  2. Im GitHub-Repository die bisherige index.html ersetzen.
+  3. Optional BESCHREIBUNG.txt zusätzlich hochladen.
+  4. Mit „Commit changes“ speichern.
+  5. Veröffentlichung abwarten und die Seite neu laden.
+Die ZIP-Datei ist nur das Downloadpaket. GitHub Pages benötigt
+die darin enthaltene index.html am richtigen Veröffentlichungsort.
+
+14. TECHNIK UND DATENSCHUTZ
+Die HTML-Datei benötigt keine externen Skripte und keine KI-API.
+Die Textkombinationen werden lokal im Browser gebildet.
+Bei der Nutzung über GitHub Pages wird die Webseite über GitHub
+ausgeliefert. Schülerdaten werden durch die Anwendung nicht
+an einen externen KI-Dienst übertragen. Sicherungsdateien können
+personenbezogene Informationen enthalten.
+
+15. COPYRIGHT
+Der Footer lautet unverändert:
+Anwendung erstellt mit ChatGPT · Copyright Marcus Beckert
+
+16. ERHALTENE FUNKTIONEN
+Freie Themenbereiche, Bearbeiten und Löschen von Bereichen und
+Bausteinen, eigene Zusatzformulierungen, Halbjahresauswahl,
+zusammenhängender Berichtstext, DOCX-/TXT-Export, JSON-Import und
+-Export und Copyright-Footer bleiben erhalten.
