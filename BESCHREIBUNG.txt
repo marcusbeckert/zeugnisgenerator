@@ -1,0 +1,199 @@
+ZEUGNISTEXTGENERATOR – AUSFÜHRLICHE BESCHREIBUNG
+===========================================
+GitHub-Pages-Version: drei Startbausteine und 1.728 kombinierbare Vorschläge
+Footer: Anwendung erstellt mit ChatGPT · Copyright Marcus Beckert
+
+1. ÜBERBLICK
+------------
+Der Zeugnistextgenerator ist eine einzelne, eigenständig ausführbare HTML-Datei.
+Er unterstützt Lernentwicklungsberichte für die Klassen 1 bis 12. Die Lehrkraft
+wählt passende Textbausteine, verändert sie bei Bedarf und setzt daraus einen
+zusammenhängenden, anschließend vollständig bearbeitbaren Bericht zusammen.
+Die Anwendung benötigt keine kostenpflichtige KI-API und keine externen
+JavaScript-Bibliotheken.
+
+2. INHALT DES GITHUB-PAKETS
+--------------------------
+index.html       – komplette Webanwendung
+BESCHREIBUNG.txt – diese ausführliche Anleitung
+
+3. STARTZUSTAND
+---------------
+Die Anwendung beginnt mit genau zwei Themenbereichen:
+  Einleitungssatz
+  Abschlusssatz
+
+Für jeden dieser Bereiche stehen anfänglich genau drei Textbausteine je
+Zeitraum bereit:
+  Allgemein:     3
+  1. Halbjahr:   3
+  2. Halbjahr:   3
+
+Es sind unterschiedliche Texte für die drei Zeiträume hinterlegt.
+Die beiden Rahmenbereiche können als ganze Bereiche nicht gelöscht oder
+umbenannt werden. Ihre Textbausteine bleiben aber bearbeitbar, einzeln
+löschbar und durch eigene Formulierungen ergänzbar.
+
+4. NEUE THEMENBEREICHE
+----------------------
+Über „Neuen Themenbereich hinzufügen“ lässt sich ein eigener Bereich
+anlegen, z. B. Mathematik, Lesen, Freiarbeit oder Sozialverhalten.
+Der Bereich wird zwischen Einleitungssatz und Abschlusssatz eingefügt.
+
+WICHTIG: Auch ein NEU hinzugefügter Bereich erhält genau drei
+Startbausteine je Zeitraum, also insgesamt neun Startbausteine:
+  3 für Allgemein
+  3 für das 1. Halbjahr
+  3 für das 2. Halbjahr
+
+Die Vorschläge sind nach Zeitraum unterschiedlich formuliert.
+Die neu angelegten Bereiche lassen sich umbenennen und löschen.
+Jeder einzelne Textbaustein kann geändert oder dauerhaft gelöscht werden.
+Die Anzahl drei gilt nur beim Start; weitere eigene Bausteine können
+hinzugefügt werden.
+
+5. 1.728 FORMULIERUNGSKOMBINATIONEN JE BEREICH UND ZEITRAUM
+----------------------------------------------------------
+Die Schaltfläche „3 weitere Formulierungen erzeugen“ stellt jeweils drei
+weitere Textvorschläge bereit. Ein weiterer Klick erzeugt drei neue
+Vorschläge. Die Formulierungen werden lokal kombiniert aus:
+  12 unterschiedlichen Lern- und Arbeitssituationen
+  12 unterschiedlichen beobachtbaren Stärken oder Leistungen
+  12 unterschiedlichen nächsten Entwicklungsschritten
+
+12 × 12 × 12 = 1.728 technisch unterschiedliche Kombinationen.
+
+Der Generator durchläuft die Kombinationen in einer festen, durchmischten
+Reihenfolge. Innerhalb eines vollständigen Durchlaufs wird dieselbe
+Kombination nicht erneut ausgegeben. Nach Ausschöpfen aller 1.728
+Kombinationen beginnt der Zyklus erneut. Der Fortschritt wird lokal
+für jeden Themenbereich und jeden Zeitraum separat gespeichert.
+
+WICHTIGE EINSCHRÄNKUNG: 1.728 unterschiedliche Kombinationen sind
+NICHT gleichbedeutend mit 1.728 inhaltlich völlig eigenständigen
+Beurteilungen. Weil einzelne Satzbestandteile wiederverwendet werden,
+können Aussagen schon vorher sinngleich oder pädagogisch ähnlich sein.
+Eine Garantie, dass sich die Bedeutung erst nach dem 1.000. Text
+wiederholt, ist mit dieser Offline-Mustertechnik nicht möglich.
+Die Lehrkraft muss alle Vorschläge auf Passung und sachliche Richtigkeit
+prüfen. Es wird keine Online-KI verwendet.
+
+Die erzeugten Vorschläge sind zunächst nur Vorschläge und verändern
+die drei Startbausteine nicht. Über „Vorschlag übernehmen“ kann eine
+Formulierung als zusätzlicher eigener Baustein gespeichert werden.
+Die Vorschläge sind vor dem Übernehmen frei bearbeitbar.
+
+6. ZEITRÄUME
+------------
+Die Auswahl umfasst:
+  Allgemein
+  1. Halbjahr
+  2. Halbjahr
+
+Die Startbausteine und die eigenen Änderungen werden je Zeitraum
+getrennt verwaltet. Auch die Reihenfolge der 1.728 Vorschläge wird
+je Themenbereich und Zeitraum getrennt fortgeführt.
+
+7. ANGABEN ZUM KIND
+-------------------
+Name, Anrede (Liebe/Lieber), Klassenstufe (1–12) und Zeitraum.
+Das frühere Feld „Schuljahr (optional)“ bleibt entfernt.
+
+8. TEXTBAUSTEINE VERWALTEN
+-------------------------
+Vorhandene Bausteine lassen sich auswählen, direkt bearbeiten und
+dauerhaft löschen. Zusätzlich kann man eigene Textbausteine eingeben.
+Eigene zusätzliche Bausteine sind ebenfalls bearbeitbar und löschbar.
+Gelöschte Bausteine werden beim Neuladen nicht automatisch ergänzt.
+Die Funktion „Startzustand wiederherstellen“ setzt die Sammlung
+ausdrücklich zurück; vorher unbedingt sichern.
+
+9. BERICHT ERSTELLEN
+--------------------
+  1. Name, Anrede, Klasse und Zeitraum auswählen.
+  2. Gewünschte Textbausteine in den Themenbereichen markieren.
+  3. Optional einmalige Zusatzformulierungen eingeben.
+  4. „Bericht erstellen / neu zusammensetzen“ wählen.
+  5. Den zusammenhängenden Text im Berichtsfeld frei überarbeiten.
+  6. Bericht kopieren oder als TXT beziehungsweise DOCX herunterladen.
+
+ACHTUNG: Ein erneutes Zusammensetzen überschreibt manuelle Änderungen
+im Berichtsfeld. Deshalb fertige Berichte vorher speichern.
+
+10. DATENSICHERUNG UND IMPORT
+-----------------------------
+„Bereiche und Bausteine exportieren“ speichert die eigene Sammlung
+als JSON-Datei. „Bereiche und Bausteine importieren“ lädt sie wieder.
+Daneben lassen sich Angaben und Auswahlen für einen konkreten Bericht
+als JSON sichern und erneut laden.
+
+Die Anwendung verwendet für diese Version neue lokale Speicherschlüssel.
+Dadurch werden alte Sammlungen mit sechs Startbausteinen oder mit dem
+Fehler von sechs Startbausteinen beim 1. Halbjahr nicht automatisch
+übernommen. Alte Daten werden nicht absichtlich gelöscht.
+Wer sie weiterverwenden möchte, kann sie aus der alten Version
+exportieren und in dieser Version importieren.
+Ein Import kann auch abweichende Anzahlen von Bausteinen enthalten.
+
+Die Position der Formulierungsvorschläge wird zusätzlich lokal
+im Browser gespeichert. Sie ist nicht Bestandteil der exportierten
+Baustein-JSON-Datei. Beim Wechsel des Browsers beginnt die
+Vorschlagsreihenfolge deshalb erneut.
+
+11. STARTZUSTAND WIEDERHERSTELLEN
+--------------------------------
+Die Funktion setzt die Bereiche auf Einleitungssatz und Abschlusssatz
+mit je drei Startbausteinen pro Zeitraum zurück. Selbst angelegte
+Bereiche und eigene Formulierungen gehen verloren. Deshalb vorher
+die Sammlung als JSON exportieren.
+
+12. GITHUB PAGES INSTALLIEREN
+-----------------------------
+Bestehendes Repository: beckertmarcus/zeugnis
+Webadresse: https://beckertmarcus.github.io/zeugnis/
+
+  1. Vorherige Sammlung gegebenenfalls als JSON sichern.
+  2. GitHub-Repository öffnen.
+  3. Die bisherige index.html durch die neue index.html ersetzen.
+  4. BESCHREIBUNG.txt zusätzlich hochladen, falls gewünscht.
+  5. Änderungen über „Commit changes“ speichern.
+  6. Nach Veröffentlichung die Webseite neu laden.
+
+Nur index.html wird zum Ausführen der Anwendung benötigt.
+Die ZIP-Datei dient als Transportpaket und wird nicht direkt
+als Webseite ausgeführt.
+
+13. DATENSCHUTZ UND OFFLINE-NUTZUNG
+----------------------------------
+Die HTML-Datei benötigt keine externen Skripte oder Online-KI.
+Die Textverarbeitung findet im Browser statt. Beim Abruf über
+GitHub Pages wird die Webseite von GitHub ausgeliefert.
+Schülerdaten, Berichte und JSON-Sicherungen vertraulich behandeln.
+Der lokale Browserspeicher kann bei Gerätewechsel oder beim Löschen
+von Websitedaten verloren gehen; regelmäßig exportieren.
+
+14. UNVERÄNDERTE FUNKTIONEN
+--------------------------
+Erhalten bleiben: zwei feste Rahmenbereiche, freie Themenbereiche,
+Bearbeiten/Löschen/Hinzufügen von Bausteinen, Halbjahresauswahl,
+Fließtext-Erstellung, nachträgliche Berichtsbearbeitung, TXT- und
+DOCX-Export, JSON-Import und -Export sowie der Footer:
+„Anwendung erstellt mit ChatGPT · Copyright Marcus Beckert“.
+
+15. TESTHINWEIS
+---------------
+Die JavaScript-Syntax und die technische Anzahl der
+Formulierungskombinationen wurden geprüft. Ein vollständiger
+Praxistest auf sämtlichen Geräten und Browsern wurde nicht durchgeführt.
+
+16. BEZEICHNUNG UND KLASSENSTUFEN
+--------------------------------
+Sichtbarer Titel: Zeugnistextgenerator.
+HTML-Browsertitel: Zeugnistextgenerator · Klassen 1–12.
+Untertitel: Klassen 1–12 · vollständig offline · auswählbare Textbausteine · bearbeitbarer Bericht · DOCX-Export.
+Das Auswahlfeld „Klassenstufe“ enthält die Stufen 1 bis 12.
+Die übrigen Funktionen und Textbausteine wurden nicht geändert.
+
+17. VORAUSWAHL DER KLASSENSTUFE
+--------------------------------
+Beim ersten Öffnen ist Klassenstufe 1 vorausgewählt. Auch „Alles zurücksetzen“ stellt die Klassenstufe auf 1. Alle Klassenstufen 1 bis 12 bleiben auswählbar.
