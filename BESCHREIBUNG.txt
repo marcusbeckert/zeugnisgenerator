@@ -1,0 +1,213 @@
+ZEUGNISGENERATOR – AUSFÜHRLICHE BESCHREIBUNG UND GITHUB-ANLEITUNG
+=================================================================
+Version: bisherige freie GitHub-Version, unverändert bis auf Copyright-Footer
+Copyright im Footer: Anwendung erstellt mit ChatGPT · Copyright Marcus Beckert
+
+1. ZWECK
+--------
+Der Zeugnisgenerator unterstützt das Formulieren individueller, zusammenhängender
+Lernentwicklungsberichte für die Klassenstufen 4 bis 6. Er verwendet auswählbare
+Textbausteine, die individuell verändert und durch eigene Formulierungen ergänzt
+werden können. Die fertigen Berichte lassen sich nachbearbeiten und als Word-Datei
+(DOCX) oder Textdatei (TXT) speichern.
+
+Die Anwendung ist eine eigenständige HTML-Datei und benötigt weder einen
+OpenAI-API-Schlüssel noch eine kostenpflichtige KI-Verbindung. Die Vorschläge für
+neue Themenbereiche werden lokal aus integrierten Formulierungsmustern erstellt.
+Sie sind keine von einer Online-KI frei verfassten Texte.
+
+2. DATEIEN IM PAKET
+-------------------
+index.html
+  Die vollständige Anwendung für GitHub Pages und die lokale Nutzung.
+
+BESCHREIBUNG.txt
+  Diese ausführliche Dokumentation. Sie wird für den Betrieb nicht benötigt.
+
+3. VERÖFFENTLICHUNG AUF GITHUB PAGES
+------------------------------------
+Die bestehende Webseite lautet:
+https://beckertmarcus.github.io/zeugnis/
+
+Vorgehensweise:
+  1. Die bisherige Bausteinsammlung vorsichtshalber in der laufenden Anwendung
+     über „Bereiche und Bausteine exportieren“ als JSON-Datei sichern.
+  2. GitHub öffnen und im Repository „beckertmarcus/zeugnis“ anmelden.
+  3. Die vorhandene index.html im Stammverzeichnis durch die index.html
+     dieses Pakets ersetzen.
+  4. Die Änderung mit „Commit changes“ speichern.
+  5. Warten, bis GitHub Pages die Änderung veröffentlicht hat.
+  6. Die oben genannte Webseite neu laden; falls nötig den Browser-Cache
+     aktualisieren.
+
+WICHTIG: Die Datei muss exakt „index.html“ heißen und am für GitHub Pages
+konfigurierten Veröffentlichungsort liegen. Ein Hochladen der ZIP-Datei allein
+ersetzt nicht automatisch die Webseite. Es muss die enthaltene index.html
+hochgeladen werden. BESCHREIBUNG.txt kann zusätzlich ins Repository, ist aber
+für die Funktion nicht erforderlich.
+
+4. STARTZUSTAND UND AUFBAU
+--------------------------
+Beim erstmaligen Öffnen dieser Version gibt es genau zwei Themenbereiche:
+  - Einleitungssatz
+  - Abschlusssatz
+
+Diese beiden Bereiche bilden den Rahmen des Berichts. Sie bleiben bestehen
+und können nicht als komplette Themenbereiche gelöscht oder umbenannt werden.
+Ihre einzelnen Textbausteine sind aber frei bearbeitbar und löschbar.
+
+Zwischen diesen beiden Rahmenbereichen lassen sich beliebig viele neue
+Themenbereiche anlegen, beispielsweise „Mathematik“, „Freiarbeit“ oder
+„Lesekompetenz“. Neu angelegte Themenbereiche erscheinen vor dem Abschlusssatz.
+
+Jeder neu angelegte Bereich bekommt sechs Startbausteine je Zeitraum:
+  - Allgemein: sechs
+  - 1. Halbjahr: sechs
+  - 2. Halbjahr: sechs
+
+Insgesamt sind das zunächst 18 Startformulierungen je neuem Themenbereich.
+Diese Formulierungen sind Muster, keine fachlich überprüften KI-Ergebnisse.
+Nach individuellen Änderungen oder Löschungen darf die Zahl der Bausteine
+von sechs abweichen. Das ist beabsichtigt.
+
+5. ANGABEN ZUM KIND
+-------------------
+Unter „1. Angaben zum Kind“ können eingegeben bzw. ausgewählt werden:
+  - Name
+  - Anrede („Liebe“ oder „Lieber“)
+  - Klassenstufe (4, 5 oder 6)
+  - Zeitraum („Kein Zeitraum – allgemeine Texte“, „1. Halbjahr“,
+    „2. Halbjahr“)
+  - Schuljahr (optional)
+
+Die Auswahl des Zeitraums steuert, welche Textbausteine angezeigt werden.
+Die Formulierungen für die Halbjahre sollen die Entwicklung des Kindes
+unterschiedlich gewichten, ohne im Text ausdrücklich „im ersten Halbjahr“
+oder „im zweiten Halbjahr“ sagen zu müssen.
+
+6. NEUEN THEMENBEREICH ANLEGEN
+------------------------------
+  1. Zum Abschnitt „2. Textbausteine“ gehen.
+  2. Im Feld „Name des neuen Bereichs“ eine Bezeichnung eintragen.
+  3. Auf „Bereich hinzufügen und Textbausteine erzeugen“ klicken.
+  4. Der neue Bereich wird zwischen Einleitungssatz und Abschlusssatz
+     eingefügt und mit je sechs Vorschlägen für die drei Zeiträume angelegt.
+  5. Die Vorschläge nach Bedarf überarbeiten.
+
+Für eigene Themenbereiche werden die Textvorschläge aus lokalen Mustern
+erzeugt. Bei spezifischen Fächern sollten diese inhaltlich geprüft werden.
+
+7. THEMENBEREICHE VERWALTEN
+---------------------------
+Selbst angelegte Themenbereiche können umbenannt und vollständig gelöscht
+werden. Beim Löschen eines Bereichs werden auch dessen Textbausteine
+entfernt. Einleitungssatz und Abschlusssatz bleiben als feste Rahmenbereiche
+erhalten.
+
+8. TEXTBAUSTEINE VERWALTEN
+--------------------------
+Jeder vorhandene Textbaustein kann:
+  - zur Verwendung im Bericht ausgewählt werden,
+  - vollständig bearbeitet werden,
+  - dauerhaft gelöscht werden.
+
+Zusätzlich lassen sich beliebig viele eigene Textbausteine hinzufügen.
+Bei einem neu angelegten Themenbereich sind sechs Formulierungen der
+Ausgangspunkt, nicht eine dauerhafte Höchst- oder Mindestgrenze.
+Gelöschte Bausteine sollen nicht allein durch das Neuladen der Seite
+wieder erscheinen.
+
+Die Verwaltung der Textbausteine erfolgt getrennt für die drei Zeiträume.
+Ein Satz, der im ersten Halbjahr verändert wird, muss dadurch nicht auch
+im allgemeinen oder im zweiten Halbjahr verändert werden.
+
+Die Funktion „Startzustand wiederherstellen (nur Einleitung und Abschluss)“
+setzt die Bausteinsammlung auf die zwei Rahmenbereiche mit den ursprünglichen
+Startformulierungen zurück. Dabei gehen selbst angelegte Bereiche und
+Anpassungen verloren. Vorher unbedingt exportieren.
+
+9. BERICHT ERSTELLEN
+--------------------
+  1. Angaben zum Kind ausfüllen.
+  2. Zeitraum wählen.
+  3. In den Themenbereichen passende Bausteine anklicken.
+  4. Auf „Bericht erstellen / neu zusammensetzen“ klicken.
+  5. Den erzeugten Fließtext im großen Textfeld frei überarbeiten.
+  6. Das Ergebnis als DOCX oder TXT herunterladen oder kopieren.
+
+ACHTUNG: Ein erneuter Klick auf „Bericht erstellen / neu zusammensetzen“
+erstellt den Text aus den aktuell ausgewählten Bausteinen neu. Manuelle
+Änderungen im fertigen Berichtsfeld können dabei überschrieben werden.
+Deshalb den fertig überarbeiteten Bericht rechtzeitig herunterladen.
+
+10. SPEICHERN, EXPORTIEREN UND IMPORTIEREN
+-----------------------------------------
+Es gibt zwei unterschiedliche Sicherungsarten:
+
+A) „Bereiche und Bausteine exportieren“
+   Exportiert die Textbausteinsammlung einschließlich der Themenbereiche
+   und der Varianten für die verschiedenen Zeiträume als JSON.
+   Damit kann die Sammlung gesichert und auf ein anderes Gerät übertragen
+   werden. Über „Bereiche und Bausteine importieren“ lässt sie sich laden.
+
+B) „Eingaben als JSON sichern“
+   Speichert Angaben und Auswahl für einen konkreten Bericht. Die Datei
+   kann über „JSON wieder laden“ wieder geöffnet werden.
+
+JSON-Dateien können personenbezogene Angaben enthalten. Bitte sicher
+aufbewahren und nur befugten Personen zugänglich machen.
+
+Eine ältere importierte Sammlung kann auch ältere Themenbereiche und
+abweichende Anzahlen von Textbausteinen enthalten. Ein Import ist daher
+nicht dasselbe wie ein frischer Start mit den zwei Rahmenbereichen.
+
+11. WORD-EXPORT
+---------------
+Die Schaltfläche „Word-Datei (.docx) herunterladen“ erzeugt eine
+Word-kompatible Datei aus dem aktuellen Berichtstext. Die Datei lässt
+sich anschließend in geeigneten Textverarbeitungsprogrammen weiter
+bearbeiten. Alternativ stehen TXT-Export und Kopieren zur Verfügung.
+
+12. DATENSCHUTZ UND TECHNIK
+---------------------------
+Die HTML-Datei enthält die für den Betrieb nötigen Funktionen und
+Textvorlagen. Sie lädt keine externen Ressourcen und kann auch lokal
+ohne Internetverbindung verwendet werden. Für den KI-Dienst fallen
+keine API-Kosten an, weil kein KI-Dienst angebunden ist.
+
+WICHTIG: Die Anwendung wird zwar über GitHub Pages ausgeliefert, aber
+die eingegebenen Schülerdaten werden von der Anwendung nicht absichtlich
+an einen externen KI-Dienst gesendet. Exportierte Dateien und lokal
+gespeicherte Daten sollten dennoch sorgfältig geschützt werden.
+Bei der Nutzung über GitHub Pages erfolgt der Abruf der Webseite über
+die Infrastruktur von GitHub.
+
+Der Browser kann lokal gespeicherte Einstellungen verlieren, etwa beim
+Löschen von Websitedaten, bei einem Gerätewechsel oder in privaten
+Browserfenstern. Deshalb regelmäßig JSON-Sicherungen erstellen.
+
+13. NUTZUNG AUF IPAD, MAC UND WINDOWS
+-------------------------------------
+Die Anwendung ist als browserbasierte HTML-Datei konzipiert. Sie kann
+über die veröffentlichte GitHub-Pages-Adresse verwendet werden.
+Bei lokaler Nutzung auf dem iPad können Browser- und Vorschauprogramme
+HTML-Dateien unterschiedlich behandeln. Die Online-Version über
+GitHub Pages ist daher für die gemeinsame Nutzung oft einfacher.
+
+14. COPYRIGHT
+-------------
+Im sichtbaren Footer der Webseite steht:
+Anwendung erstellt mit ChatGPT · Copyright Marcus Beckert
+
+Gegenüber der unmittelbar vorherigen Version wurde ausschließlich der
+Wortlaut des bestehenden Copyright-Footers geändert. Sämtliche bisherigen Textbausteine, JavaScript-Funktionen,
+Speicherschlüssel, Themenbereichsregeln und Exportfunktionen sind unverändert.
+
+15. WICHTIGE HINWEISE
+---------------------
+- Die Texte sind Formulierungshilfen. Die fachliche und pädagogische
+  Verantwortung für die fertigen Zeugnisse verbleibt bei der Lehrkraft.
+- Eigene Änderungen regelmäßig als JSON exportieren.
+- Vor einem Zurücksetzen der Sammlung immer eine Sicherung anlegen.
+- Ein vollständiger Praxistest auf jedem Browser oder iPad-Modell
+  ist nicht Bestandteil dieses Pakets.
