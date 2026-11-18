@@ -1,0 +1,131 @@
+ZEUGNISGENERATOR – AUSFÜHRLICHE BESCHREIBUNG
+===========================================
+GitHub-Pages-Version mit drei Startbausteinen pro Themenbereich und Zeitraum
+Footer: Anwendung erstellt mit ChatGPT · Copyright Marcus Beckert
+
+1. ZWECK UND FUNKTIONSWEISE
+Der Zeugnisgenerator hilft beim Erstellen individueller Lernentwicklungsberichte
+für die Klassen 4, 5 und 6. Texte werden aus auswählbaren Formulierungen
+zusammengesetzt. Der fertige Bericht kann anschließend vollständig bearbeitet
+und als Word-Datei (.docx) oder Textdatei (.txt) gespeichert werden.
+Die Anwendung ist eine einzelne HTML-Datei. Es wird keine kostenpflichtige
+KI-Schnittstelle verwendet; die Vorschläge werden offline erzeugt.
+
+2. DATEIEN
+index.html – die vollständige Webanwendung.
+BESCHREIBUNG.txt – diese Bedienungs- und Installationsanleitung.
+
+3. ERSTE VERWENDUNG
+Bei einer neuen Installation sind nur zwei Themenbereiche vorhanden:
+  Einleitungssatz und Abschlusssatz.
+Für beide Bereiche stehen in jedem Zeitraum genau drei unterschiedliche,
+ausformulierte Textbausteine zur Auswahl:
+  Allgemein: 3
+  1. Halbjahr: 3
+  2. Halbjahr: 3
+Die Texte der Zeiträume unterscheiden sich inhaltlich; sie bestehen nicht nur
+aus einer Zeitangabe vor demselben Satz.
+
+4. ANGABEN ZUM KIND
+Folgende Felder sind verfügbar:
+  Name, Anrede (Liebe/Lieber), Klassenstufe (4/5/6), Zeitraum
+  (Allgemein, 1. Halbjahr, 2. Halbjahr).
+Ein Eingabefeld für das Schuljahr gibt es nicht mehr.
+
+5. THEMENBEREICHE HINZUFÜGEN
+Im Abschnitt „2. Textbausteine“ den Namen eines neuen Bereichs eintragen und
+„Bereich hinzufügen und Textbausteine erzeugen“ wählen.
+Neue Bereiche erscheinen zwischen Einleitungssatz und Abschlusssatz.
+Für jeden neuen Bereich werden automatisch neun Formulierungen erzeugt:
+drei für Allgemein, drei für das 1. Halbjahr und drei für das 2. Halbjahr.
+Diese sind jeweils voneinander verschieden und können frei verändert werden.
+Die Themenbereiche können beispielsweise „Mathematik“, „Freiarbeit“,
+„Lesen“ oder „Zusammenarbeit“ heißen. Eigene Themenbereiche lassen sich
+umbenennen und löschen.
+
+6. FESTE RAHMENBEREICHE
+Einleitungssatz und Abschlusssatz bleiben als Themenbereiche erhalten.
+Ihre einzelnen Textbausteine können jedoch bearbeitet und dauerhaft gelöscht
+werden. Auch dort lassen sich neue Formulierungen ergänzen.
+
+7. TEXTBAUSTEINE AUSWÄHLEN UND BEARBEITEN
+Jeder Startbaustein kann per Kontrollkästchen ausgewählt werden.
+Über „Bearbeiten“ lässt sich der Text direkt in der Anwendung verändern.
+Über „Dauerhaft löschen“ kann ein einzelner Baustein entfernt werden.
+Die drei Texte pro Zeitraum sind der Startzustand, keine feste Obergrenze:
+Eigene Formulierungen können weiterhin hinzugefügt und gelöscht werden.
+Änderungen gelten für den gerade ausgewählten Zeitraum.
+Der Button „Weitere Formulierungen vorschlagen“ zeigt zusätzliche
+Offline-Formulierungen, die vor dem Übernehmen verändert werden können.
+
+8. BERICHT ERSTELLEN
+  1. Name, Anrede, Klasse und Zeitraum wählen.
+  2. Pro Themenbereich einen oder mehrere passende Bausteine auswählen.
+  3. Optional eigene einmalige Zusatzformulierungen eingeben.
+  4. „Bericht erstellen / neu zusammensetzen“ anklicken.
+  5. Den fertigen Fließtext im großen Textfeld nachbearbeiten.
+  6. Den Bericht kopieren oder als TXT beziehungsweise DOCX speichern.
+Ein erneutes Zusammensetzen kann manuelle Änderungen im Berichtsfeld
+überschreiben. Daher bearbeitete Berichte vorher speichern.
+
+9. HALBJAHRE
+„Allgemein“, „1. Halbjahr“ und „2. Halbjahr“ haben getrennte Sammlungen.
+Bei neu angelegten Bereichen werden drei jeweils unterschiedliche Vorschläge
+pro Zeitraum angelegt. Der Text muss nicht ausdrücklich die Bezeichnung des
+Halbjahres enthalten. Beim Wechsel des Zeitraums werden die jeweils passenden
+Bausteine angezeigt.
+
+10. SICHERN UND IMPORTIEREN
+„Bereiche und Bausteine exportieren“ speichert die eigene Sammlung als JSON.
+„Bereiche und Bausteine importieren“ lädt eine solche Sammlung wieder.
+Daneben können die Eingaben für einen konkreten Bericht als JSON gesichert
+und erneut geladen werden. Diese Dateien können personenbezogene Daten
+enthalten und sollten geschützt aufbewahrt werden.
+Eine importierte alte Sammlung kann auch mehr oder weniger als drei
+Bausteine pro Bereich enthalten; sie wird bewusst nicht automatisch gekürzt.
+
+11. STARTZUSTAND WIEDERHERSTELLEN
+Die Schaltfläche „Startzustand wiederherstellen (nur Einleitung und Abschluss)“
+setzt die Sammlung auf die beiden ursprünglichen Rahmenbereiche mit je drei
+Bausteinen für jeden Zeitraum zurück. Selbst angelegte Themenbereiche und
+individuelle Anpassungen gehen dabei verloren. Vorher als JSON exportieren.
+
+12. LOKALE SPEICHERUNG
+Die Anwendung verwendet einen neuen lokalen Speicherschlüssel, damit frühere
+Versionen mit sechs Startbausteinen nicht automatisch die neue Dreierauswahl
+überschreiben. Vorhandene alte Sammlungen werden nicht gelöscht. Wer sie
+weiterverwenden möchte, kann sie aus der vorherigen Version als JSON exportieren
+und in der neuen Version importieren. Bei einem Browserwechsel oder beim Löschen
+von Websitedaten können lokal gespeicherte Änderungen verloren gehen.
+Deshalb regelmäßig JSON-Sicherungen erstellen.
+
+13. GITHUB PAGES INSTALLIEREN
+Repository: beckertmarcus/zeugnis
+Webadresse: https://beckertmarcus.github.io/zeugnis/
+  1. Bisherige Sammlungen gegebenenfalls als JSON sichern.
+  2. GitHub-Repository öffnen.
+  3. Die dortige index.html durch die neue index.html ersetzen.
+  4. Optional BESCHREIBUNG.txt zusätzlich hochladen.
+  5. „Commit changes“ auswählen.
+  6. Nach der Veröffentlichung die Webseite neu laden.
+Nur die index.html ist für den Betrieb notwendig. Die ZIP-Datei ist ein
+Downloadpaket und wird nicht als solche auf GitHub Pages ausgeführt.
+
+14. DATENSCHUTZ UND OFFLINE-BETRIEB
+Die Anwendung benötigt keine externen Skripte oder KI-API. Schülernamen und
+Berichtstexte werden von der Anwendung nicht an einen KI-Dienst gesendet.
+Bei Verwendung der GitHub-Pages-Adresse wird die HTML-Datei von GitHub
+ausgeliefert. JSON-Exporte und fertige Zeugnisse bitte vertraulich behandeln.
+Der Bericht muss vor der Verwendung pädagogisch und sprachlich geprüft werden.
+
+15. COPYRIGHT
+Der sichtbare Footer lautet unverändert:
+Anwendung erstellt mit ChatGPT · Copyright Marcus Beckert
+
+16. UNVERÄNDERTE FUNKTIONEN
+Erhalten bleiben: frei erstellbare Themenbereiche, Umbenennen und Löschen
+eigener Themenbereiche, Bearbeiten und Löschen einzelner Textbausteine,
+Zusatzbausteine, Vorschlagsfunktion, Halbjahreswahl, Fließtext-Erstellung,
+freie Bearbeitung des fertigen Berichts, Kopieren, TXT- und DOCX-Export,
+JSON-Sicherung und -Import sowie die Copyright-Zeile.
+Die Startanzahl und die Standardformulierungen wurden angepasst.
