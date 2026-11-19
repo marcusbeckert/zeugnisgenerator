@@ -1,0 +1,52 @@
+ZEUGNISTEXTGENERATOR – FÄCHER UND KLASSEN ÜBERARBEITET (NOVEMBER 2026)
+
+DATEIEN
+- index.html: Anwendung für GitHub Pages (oder lokal im Browser).
+- BESCHREIBUNG.txt: diese Anleitung.
+
+NEU IN DIESER VERSION
+- Fächer: übersichtliche Zweispalten-Ansicht mit separatem Formular und Liste vorhandener Fächer.
+- Jahrgänge 1 bis 12 als große, gut anklickbare Auswahlfelder; auf iPad und Smartphone angepasst.
+- Ein bereits bestehendes Fach kann durch erneutes Eingeben desselben Namens für weitere Jahrgänge freigeschaltet werden. Vorhandene Fächer werden dabei nicht überschrieben.
+- Klassen: größere Karten für bestehende Klassen und klar abgegrenztes Formular für neue Klassen.
+- Ein dezentes Fragezeichen pro Hauptbereich erklärt den Ablauf.
+
+NEUER ARBEITSABLAUF
+1. „Schule öffnen“ anklicken.
+2. Unter „Fächer“ ein Fach wie Deutsch, Mathematik oder Französisch anlegen. Dabei die Jahrgänge 1 bis 12 auswählen, für die das Fach verfügbar sein soll.
+3. Unter „Klassen“ eine frei benannte Klasse erstellen, z. B. Panda-Klasse, Igel-Klasse oder 5a. Die in dieser Klasse vertretenen Jahrgänge auswählen. Mischklassen sind möglich.
+4. Die Klasse öffnen und Kinder direkt dort anlegen. Für jedes Kind seinen tatsächlichen Jahrgang und die Anrede auswählen. Das Kind gehört danach sofort zu dieser Klasse.
+5. In der Klasse den Reiter „2 · Fächer“ öffnen, einen Jahrgang und ein Fach wählen, die betreffenden Kinder markieren und „Fachzuordnung speichern“ klicken.
+6. Unter „1 · Kinder“ das Kind öffnen. Im Reiter „Fachtexte“ erscheinen nur die zugeordneten Fächer. Fach öffnen, Stichpunkte eingeben, optional Gemini-Text erzeugen und den Entwurf prüfen/übernehmen.
+7. Unter „Bericht & Export“ den Text prüfen und exportieren. Einleitung und Abschluss bleiben unabhängig von der Gemini-KI.
+
+DATEN UND KOMPATIBILITÄT
+- Vor einem Update unbedingt unter „Einstellungen & Sicherung“ eine vollständige JSON-Sicherung erstellen.
+- Die bestehende lokale Speicherung und die JSON-Sicherungen werden weiterverwendet.
+- Frühere „Lerngruppen“ werden als „Klassen“ angezeigt, ohne die gespeicherten Zuordnungen zu verändern.
+- Der Jahrgang bleibt eine Eigenschaft jedes Kindes. Ein Klassenwechsel ändert den Jahrgang nicht und löscht keine vorhandenen Texte.
+- Der alte Jahrgangsbereich bleibt technisch zur Kompatibilität erhalten, wird aber nicht mehr im Hauptmenü angezeigt.
+- Vorhandene jahrgangsspezifische Fachbibliotheken bleiben erhalten. Neue Fächer werden zentral für die ausgewählten Jahrgänge erstellt.
+- Fachzuordnungen werden für Allgemein, 1. Halbjahr und 2. Halbjahr gespeichert.
+- Die optionale Gemini-KI benötigt Internet und einen eigenen API-Schlüssel unter „Einstellungen & Sicherung“.
+- Personenbezogene Daten von Kindern nicht ohne entsprechende schulische Datenschutzfreigabe an KI-Dienste senden.
+- Daten werden lokal im Browser gespeichert; für die Datensicherheit regelmäßig JSON-Sicherungen erstellen.
+
+GITHUB PAGES
+- index.html ins Repository laden und vorhandene index.html ersetzen.
+- BESCHREIBUNG.txt ebenfalls ersetzen.
+- Seite neu laden, gegebenenfalls Browsercache aktualisieren.
+
+HILFE
+- In jedem Hauptbereich gibt es ein Fragezeichen mit Hinweisen zur Bedienung.
+- Falls ein Fach beim Kind nicht erscheint: Prüfen, ob das Fach für den Jahrgang erstellt und im Klassenreiter „Fächer“ zugeordnet wurde.
+
+HINWEIS
+- DOCX kann in Apple Pages geöffnet werden; eine echte .pages-Datei wird im Browser nicht erzeugt.
+- Die Syntax wurde geprüft, ein vollständiger Browsertest aller Arbeitsabläufe steht noch aus.
+
+Anwendung erstellt mit ChatGPT · Copyright Marcus Beckert
+
+PRÜFUNG
+- JavaScript-Syntax mit Node.js geprüft.
+- Kein vollständiger Browsertest durchgeführt.
