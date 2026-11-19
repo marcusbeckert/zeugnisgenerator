@@ -1,0 +1,678 @@
+AKTUALISIERUNG: GEMINI 3.5 UND API-SCHLÜSSEL SPEICHERN (19.11.2026)
+=================================================================
+Google beschränkt den Zugriff auf Gemini-2.5-Modelle für neue Nutzer.
+Wenn „HTTP 404: no longer available to new users“ erscheint, ist der
+API-Schlüssel nicht zwingend falsch. Als Standard ist jetzt
+„gemini-3.5-flash-lite“ eingestellt. Alternativ stehen
+„gemini-3.8-flash“ und „gemini-3.5-flash“ zur Auswahl.
+Quelle: https://ai.google.dev/gemini-api/docs/deprecations
+
+API-Schlüssel erstellen:
+1. https://aistudio.google.com/apikey öffnen.
+2. Mit Google-Konto anmelden.
+3. „Create API key“ / „API-Schlüssel erstellen“ wählen.
+4. Ein Google-Cloud-Projekt auswählen oder erstellen.
+5. Schlüssel kopieren und im Generator im Feld „Gemini-API-Schlüssel“
+   einfügen. Den Schlüssel niemals auf GitHub veröffentlichen.
+6. „Gemini 3.5 Flash-Lite (empfohlen)“ wählen und mit fiktiven
+   Stichpunkten testen. Verfügbare kostenlose Kontingente sind
+   abhängig von Modell, Konto und aktuellen Google-Bedingungen.
+
+API-Schlüssel optional auf diesem Gerät merken:
+- Die Checkbox „API-Schlüssel auf diesem Gerät merken“ ist zunächst AUS.
+- Nach Aktivierung und Bestätigung wird der Schlüssel im lokalen
+  Browserspeicher (localStorage) dieses Geräts hinterlegt.
+- Beim nächsten Besuch derselben Website im selben Browser wird er
+  automatisch wieder in das Eingabefeld geladen.
+- Änderungen am Schlüssel werden bei aktivierter Option gespeichert.
+- Die Schaltfläche „Gespeicherten API-Schlüssel entfernen“ leert
+  sowohl das Eingabefeld als auch den lokalen gespeicherten Schlüssel.
+- Ohne aktivierte Checkbox bleibt der Schlüssel nur im Eingabefeld.
+- Der Schlüssel wird NICHT in die JSON-Exporte oder Kinderakten übernommen.
+- ACHTUNG: localStorage ist NICHT verschlüsselt. Personen mit Zugriff
+  auf das Gerät oder Browser-Entwicklertools können ihn auslesen.
+  Deshalb nur auf eigenen, geschützten Geräten aktivieren. Google
+  empfiehlt für sichere Produktivsysteme einen serverseitigen Proxy.
+- Bei privaten Browserfenstern oder gelöschten Website-Daten kann
+  die Speicherung entfallen. Unterschiedliche Domains/Browser teilen
+  sich den gespeicherten Schlüssel nicht.
+- Eine direkte Browser-API-Anbindung kann Schlüssel nicht vollständig
+  vor Zugriff durch den Gerätebenutzer schützen.
+
+Datenschutz: Die KI bekommt Stichpunkte und Themenbereich sowie eine
+allgemeine Sprachvorgabe, aber keinen Namen und keine genaue Klasse.
+Dennoch können Beobachtungen personenbezogen sein. Vor schulischer
+Freigabe ausschließlich fiktive oder wirklich anonymisierte Angaben
+verwenden. Im kostenlosen Google-Tarif können Daten zur Verbesserung
+von Google-Produkten verarbeitet werden.
+
+WICHTIG: Die restlichen Funktionen des Zeugnistextgenerators und die
+Speicherstruktur für Kinder, Themenbereiche und Berichte bleiben
+unverändert. Die KI benötigt weiterhin eine Internetverbindung.
+
+=================================================================
+BISHERIGE VOLLSTÄNDIGE ANLEITUNG
+=================================================================
+
+ZEUGNISTEXTGENERATOR – AUSFÜHRLICHE BEDIENUNGSANLEITUNG
+========================================================
+Stand: 19. November 2026
+GitHub: https://github.com/beckertmarcus/zeugnis
+Webseite: https://beckertmarcus.github.io/zeugnis/
+
+INHALT
+------
+ 1. Schnellstart
+ 2. GitHub-Version installieren und aktualisieren
+ 3. Aufbau der Oberfläche und Fragezeichen-Hilfen
+ 4. Kind anlegen und auswählen
+ 5. Klassenstufen und Zeiträume
+ 6. Feste und eigene Themenbereiche
+ 7. Themenbereich gleichzeitig in mehreren Klassen anlegen
+ 8. Allgemeingültige Texte für alle Kinder
+ 9. Wiederverwendbare Textbausteine und Offline-Vorschläge
+10. Gemini-KI: Was ist das und was kann sie?
+11. Gemini-API-Schlüssel beschaffen – Schritt für Schritt
+12. Gemini im Zeugnistextgenerator verwenden
+13. Sprachliche Anpassung an Klassenstufen
+14. Datenschutz, API-Schlüssel und Kosten
+15. Bericht zusammensetzen, prüfen und bearbeiten
+16. Export als Word, PDF, Apple Pages und TXT
+17. Kinderliste, Klassenbibliotheken und JSON-Sicherungen
+18. Klassenbibliotheken kopieren, importieren und zurücksetzen
+19. Typische Arbeitsabläufe
+20. Häufige Probleme und Lösungen
+21. Technische Grenzen und Prüfstatus
+
+
+1. SCHNELLSTART
+===============
+Wenn du den Generator zum ersten Mal verwendest:
+ 1) Öffne die GitHub-Pages-Webseite im Browser.
+ 2) Lege unter „1. Angaben zum Kind“ ein Kind an.
+ 3) Wähle die passende Klassenstufe und den Zeitraum.
+ 4) Öffne unter „2. Textbausteine“ die gewünschten Themenbereiche.
+ 5) Wähle vorhandene Bausteine aus oder ergänze eigene.
+ 6) Für individuelle Formulierungen kannst du optional Gemini nutzen.
+ 7) Klicke auf „Bericht erstellen / neu zusammensetzen“.
+ 8) Lies den Bericht vollständig durch und bearbeite ihn bei Bedarf.
+ 9) Wähle unter „3. Bericht bearbeiten und speichern“ das Dateiformat.
+10) Sichere die Kinderliste und die Klassenbibliotheken regelmäßig als JSON.
+
+Die KI ist OPTIONAL. Ohne API-Schlüssel lassen sich die normalen
+Textbausteine, Klassenbibliotheken, Kinderverwaltung und Exporte nutzen.
+
+
+2. GITHUB-VERSION INSTALLIEREN UND AKTUALISIEREN
+================================================
+Die Anwendung besteht aus einer einzigen index.html. Es ist keine
+Installation auf dem Computer und kein eigener Server erforderlich.
+
+Bestehende GitHub-Pages-Seite aktualisieren:
+ 1) WICHTIG: Vorher die Kinderliste und alle Klassenbibliotheken
+    als JSON exportieren und die Dateien sicher aufbewahren.
+ 2) Öffne https://github.com/beckertmarcus/zeugnis
+ 3) Ersetze die Datei index.html durch die neue index.html aus dem ZIP.
+ 4) Lade die BESCHREIBUNG.txt ebenfalls in das Repository hoch.
+ 5) Bestätige die Änderung über „Commit changes“.
+ 6) Öffne https://beckertmarcus.github.io/zeugnis/
+ 7) Lade die Seite bei Bedarf vollständig neu, falls noch die alte
+    Version im Browser-Cache angezeigt wird.
+
+Hinweis: Die Daten werden im Browser gespeichert, nicht im GitHub-
+Repository. Ein Update der HTML-Datei soll sie nicht absichtlich
+löschen. Trotzdem ist eine JSON-Sicherung vor jedem Update wichtig.
+
+
+3. OBERFLÄCHE UND FRAGEZEICHEN-HILFEN
+===================================
+Die Oberfläche ist bewusst hell, kompakt und zurückhaltend gestaltet:
+weiße Flächen, dezente graue und schieferblaue Akzente, feine Linien.
+
+Erklärungen werden überwiegend hinter kleinen hellgrauen Hilfe-
+Symbolen versteckt. Diese zeigen ein Fragezeichen in einem feinen
+Kreis, ohne zusätzlichen großen Button-Rahmen.
+
+- Auf ein Fragezeichen klicken oder tippen: Hilfe erscheint im Popup.
+- Popup schließen: Schließen-Symbol, Escape oder außerhalb klicken,
+  soweit der jeweilige Browser diese Bedienung unterstützt.
+- Zusammengehörige Hinweise sind in einem Popup gebündelt.
+- Das Popup verändert keine Eingaben und speichert keine Daten.
+
+Die drei Hauptabschnitte heißen:
+ 1. Angaben zum Kind
+ 2. Textbausteine
+ 3. Bericht bearbeiten und speichern
+Zusätzlich gibt es oben die optionale Gemini-KI-Einrichtung.
+
+
+4. KIND ANLEGEN UND AUSWÄHLEN
+=============================
+Im Bereich „1. Angaben zum Kind“ gibt es eine Auswahl für bereits
+gespeicherte Kinder sowie Eingaben für Name, Anrede, Klassenstufe und
+Zeitraum.
+
+Neues Kind:
+ 1) Ein neues Kind in der Auswahl vorbereiten.
+ 2) Den Namen eintragen. Er dient der internen Zuordnung.
+ 3) Anrede „Liebe“ oder „Lieber“ wählen, soweit benötigt.
+ 4) Klassenstufe 1 bis 12 wählen.
+ 5) Auf „Kind anlegen“ klicken.
+
+Bestehendes Kind:
+ - In „Gespeicherte Kinder“ auswählen.
+ - Gespeicherte Arbeitsstände werden diesem Kind zugeordnet.
+ - Mit „Kind dauerhaft löschen“ kann der Eintrag entfernt werden;
+   die Sicherheitsabfrage sorgfältig lesen.
+
+Der Schülername wird nicht automatisch in den neu zusammengesetzten
+Zeugnistext geschrieben. Er dient der Kinderverwaltung. Eine genaue
+Klassenstufe wird ebenfalls nicht in den Bericht eingefügt.
+
+WICHTIG: Eine Kinderliste im Browser ist kein verschlüsseltes,
+zentral verwaltetes Schulverwaltungssystem. Das Gerät schützen und
+Sicherungsdateien vertraulich behandeln.
+
+
+5. KLASSENSTUFEN UND ZEITRÄUME
+==============================
+Klassenstufen: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 und 12.
+
+Jede Klassenstufe besitzt eine EIGENE Bibliothek mit Themenbereichen
+und Textbausteinen. Änderungen in Klasse 4 verändern daher nicht
+automatisch die Bibliothek von Klasse 5.
+
+Zeitraum-Auswahl:
+ - „Kein Zeitraum – allgemeine Texte“
+ - „1. Halbjahr“
+ - „2. Halbjahr“
+
+Textbausteine und individuelle Arbeitsstände können je nach Zeitraum
+unterschiedlich sein. Beim Wechsel die angezeigten Inhalte prüfen.
+
+
+6. FESTE UND EIGENE THEMENBEREICHE
+==================================
+Es gibt zwei feste Rahmenbereiche:
+ - Einleitungssatz
+ - Abschlusssatz
+
+Diese festen Kategorien bleiben grundsätzlich erhalten. Sie besitzen
+Startbausteine für die verschiedenen Zeiträume. Einzelne Bausteine
+lassen sich je nach Funktion bearbeiten oder entfernen.
+
+Daneben kannst du beliebig viele eigene Themenbereiche anlegen,
+beispielsweise „Lesen“, „Schreiben“, „Mathematik“, „Arbeitsverhalten“
+oder „Sozialverhalten“.
+
+NEUE eigene Themenbereiche beginnen OHNE vorgefertigte auswählbare
+Textbausteine. Du kannst ihnen stattdessen einen allgemeingültigen
+Text, eigene wiederverwendbare Bausteine oder einen individuellen
+Gemini-Text geben.
+
+Bereits früher angelegte Textbausteine werden bei einem Update nicht
+automatisch gelöscht. Das schützt vorhandene Daten.
+
+
+7. EINEN THEMENBEREICH IN MEHREREN KLASSEN ANLEGEN
+==================================================
+Unter „2. Textbausteine“ -> „Neuen Themenbereich hinzufügen“:
+ 1) „Name des neuen Bereichs“ ausfüllen, z. B. „Lesen“.
+ 2) Optional „Allgemeingültiger Text“ eingeben (siehe Kapitel 8).
+ 3) Unter „In welchen Klassenstufen ...?“ mehrere Kästchen wählen.
+    Beispiel: Klasse 4, Klasse 5 und Klasse 6.
+ 4) Bei Bedarf „Alle Klassen“ oder „Nur aktuelle Klasse“ verwenden.
+ 5) „Themenbereich in ausgewählten Klassen erstellen“ anklicken.
+
+Der Themenbereich wird in jeder ausgewählten Klassenbibliothek
+angelegt, unabhängig davon, welches Kind gerade ausgewählt ist.
+Anschließend lassen sich die Versionen der einzelnen Klassen getrennt
+bearbeiten. Bestehende gleichnamige Themenbereiche sollen nicht
+unbemerkt überschrieben werden; angezeigte Hinweise beachten.
+
+
+8. ALLGEMEINGÜLTIGER TEXT FÜR JEDES KIND
+=======================================
+Beim Anlegen eines neuen Themenbereichs gibt es das optionale Feld
+„Allgemeingültiger Text (optional, für jedes Kind)“.
+
+Beispiel:
+Themenbereich: Lesen
+Klassen: 4, 5, 6
+Text: „Du setzt dich mit unterschiedlichen Textsorten auseinander
+und entwickelst deine Lesestrategien weiter.“
+
+Ergebnis:
+ - Der Bereich „Lesen“ wird in den Klassen 4, 5, 6 erstellt.
+ - Der allgemeine Text wird in jeder dieser Klassen gespeichert.
+ - Beim NEUEN Zusammensetzen eines Berichts wird er für jedes Kind
+   dieser Klasse automatisch berücksichtigt.
+ - Es ist keine einzelne Auswahl pro Kind erforderlich.
+ - Der Text kann je Klasse später getrennt bearbeitet oder entfernt
+   werden, ohne die anderen Klassen automatisch zu ändern.
+
+Unterschied zu einem individuellen KI-Text:
+ - Allgemeingültiger Text: gilt für ALLE Kinder einer Klassenstufe.
+ - Individueller KI-Text: gehört zum jeweiligen Kind und Zeitraum.
+
+WICHTIG: Nur Aussagen als allgemeingültig eintragen, die tatsächlich
+für alle betroffenen Kinder passen. Keine individuelle Leistungs-
+beurteilung pauschal für eine gesamte Klasse übernehmen.
+
+Bereits fertig gespeicherte Berichte werden nicht automatisch geändert.
+Erst „Bericht erstellen / neu zusammensetzen“ übernimmt neue allgemeine
+Texte. Dabei können bisherige manuelle Änderungen im Bericht verloren
+gehen; gegebenenfalls vorher kopieren oder exportieren.
+
+
+9. TEXTBAUSTEINE UND OFFLINE-FORMULIERUNGSVORSCHLÄGE
+====================================================
+In Themenbereichen können wiederverwendbare Textbausteine ergänzt,
+bearbeitet, ausgewählt und gelöscht werden.
+
+- Wiederverwendbare Bausteine sind Teil der Klassenbibliothek.
+- Die Auswahl für einen Bericht gehört zum Arbeitsstand des Kindes.
+- Ein eigener Baustein ist nicht automatisch ein KI-Text.
+- Für die festen Bereiche gibt es außerdem Offline-Vorschläge, die
+  ohne Google, ohne Internet und ohne API-Schlüssel funktionieren.
+
+Die Offline-Vorschläge kombinieren Formulierungsbestandteile. Sie
+sind keine generative KI und sollten ebenfalls auf sprachliche
+Stimmigkeit geprüft werden.
+
+
+10. GEMINI-KI: ZWECK UND MÖGLICHKEITEN
+=====================================
+Gemini ist ein KI-Dienst von Google. Er kann aus kurzen Stichpunkten
+einen flüssigen, wertschätzenden Text formulieren.
+
+Beispiel-Stichpunkte:
+„liest flüssig; versteht die Kernaussagen; meldet sich selten“
+
+Möglicher Text:
+„Du liest flüssig und erfasst die wesentlichen Aussagen der Texte.
+Traue dich, deine Gedanken im Unterricht noch häufiger einzubringen.“
+
+Die KI-Formulierungshilfe befindet sich direkt im jeweiligen
+Themenbereich – auch in neu angelegten Bereichen.
+
+Der KI-Text:
+ - wird in der Du-Form angefordert,
+ - soll keinen Namen und keine Klassenstufe nennen,
+ - soll nur die tatsächlich eingegebenen Beobachtungen verwenden,
+ - kann vor der Übernahme vollständig bearbeitet werden,
+ - wird dem ausgewählten Kind und Zeitraum zugeordnet,
+ - kann beim erneuten Zusammensetzen des Berichts berücksichtigt werden.
+
+Die KI kann Fehler machen oder Details hinzuerfinden. Deshalb ist
+jede Formulierung vor Verwendung fachlich zu kontrollieren.
+
+
+11. GEMINI-API-SCHLÜSSEL HOLEN – SCHRITT FÜR SCHRITT
+====================================================
+WICHTIG: Du brauchst einen GEMINI-API-SCHLÜSSEL, nicht das Passwort
+deines Google-Kontos. Für Gemini 2.5 Flash-Lite ist kein eigener
+Spezialschlüssel nötig; derselbe API-Schlüssel kann für verfügbare
+Gemini-Modelle deines Projekts genutzt werden.
+
+ 1) Öffne im Browser https://aistudio.google.com/apikey
+ 2) Melde dich mit einem Google-Konto an.
+ 3) Falls nötig, akzeptiere die Nutzungsbedingungen und wähle ein
+    Google-Cloud-Projekt oder erstelle ein neues Projekt.
+ 4) Klicke auf „Create API key“ bzw. „API-Schlüssel erstellen“.
+    Die genaue Beschriftung kann sich ändern.
+ 5) Wähle das Projekt, für das der Schlüssel erstellt werden soll.
+ 6) Kopiere den angezeigten Schlüssel. Er ist vertraulich.
+ 7) Öffne https://beckertmarcus.github.io/zeugnis/
+ 8) Suche oben „Optionale Gemini-KI einrichten“.
+ 9) Füge den Schlüssel in „Gemini-API-Schlüssel (nur für diese
+    geöffnete Seite)“ ein.
+10) Wähle im Feld „Gemini-Modell“ vorzugsweise
+    „Gemini 2.5 Flash-Lite“ (Modell-ID: gemini-2.5-flash-lite).
+    Alternativ gibt es „Gemini 2.5 Flash“.
+11) Lege ein Testkind mit ERFUNDENEN Daten an, wähle einen
+    Themenbereich und probiere die KI mit fiktiven Stichpunkten.
+
+Du musst den API-Schlüssel nicht in GitHub hinterlegen und darfst ihn
+NICHT in die index.html schreiben. Er wird nur in das Eingabefeld der
+laufenden Seite eingefügt. Nach einem Neuladen kann eine erneute
+Eingabe erforderlich sein.
+
+Weitere offizielle Informationen:
+ - API-Schlüssel: https://ai.google.dev/gemini-api/docs/api-key
+ - Modelle: https://ai.google.dev/gemini-api/docs/models
+ - Preise: https://ai.google.dev/gemini-api/docs/pricing
+ - Nutzungsgrenzen: https://ai.google.dev/gemini-api/docs/rate-limits
+
+
+12. GEMINI IM GENERATOR VERWENDEN
+================================
+ 1) Kind in der Kinderliste auswählen.
+ 2) Klassenstufe und Zeitraum kontrollieren.
+ 3) Gewünschten Themenbereich öffnen, z. B. „Lesen“.
+ 4) In der KI-Formulierungshilfe die Beobachtungen als Stichpunkte
+    eingeben, z. B. „liest flüssig; findet Hauptinformationen“.
+ 5) Den Formulierungsstil wählen, sofern angeboten.
+ 6) Auf „Mit Gemini formulieren“ klicken.
+ 7) Die angezeigte Datenübertragung prüfen und bestätigen.
+ 8) Warten, bis der KI-Vorschlag erscheint. Dafür ist eine
+    Internetverbindung erforderlich.
+ 9) Den erzeugten Text im bearbeitbaren Feld kontrollieren.
+10) Unzutreffende oder unpassende Aussagen entfernen bzw. ändern.
+11) Die Option aktivieren, den individuellen Text beim Erzeugen des
+    Fließtextes zu berücksichtigen.
+12) „Bericht erstellen / neu zusammensetzen“ anklicken.
+13) Den Gesamtbericht abschließend prüfen und speichern.
+
+Wenn bereits ein KI-Text vorhanden ist, kann vor dem Ersetzen eine
+Bestätigung erscheinen. Vor dem Erzeugen eines neuen Vorschlags
+vorhandene manuelle Änderungen bei Bedarf sichern.
+
+Stichpunkte und bearbeitete KI-Texte können im lokalen Arbeitsstand
+des Kindes erhalten bleiben. Ein erneuter KI-Aufruf ist nicht nötig,
+um einen bereits gespeicherten Text nur sprachlich zu korrigieren.
+
+
+13. SPRACHNIVEAU NACH KLASSENSTUFE
+==================================
+Der Generator ordnet die gewählte Klassenstufe lokal einem allgemeinen
+Sprachniveau zu:
+
+ Klassen 1–4:  einfache, kindgerechte Sprache
+ Klassen 5–7:  altersgerechte, zunehmend differenzierte Sprache
+ Klassen 8–10: sachliche, differenzierte Sprache
+ Klassen 11–12: anspruchsvolle, präzise Sprache
+
+Die KI erhält die allgemeine Sprachvorgabe, nicht automatisch die
+genaue Klassenstufe. Der Ergebnistext soll ausschließlich in der
+Du-Form stehen. Name und Klassenstufe sollen nicht erscheinen.
+
+Achtung: Eine sprachliche Anpassung ersetzt keine Prüfung der
+fachlichen Anforderungen und des Lehrplans. Die KI darf keine
+Leistungen oder Kompetenzen behaupten, die nicht beobachtet wurden.
+
+
+14. DATENSCHUTZ, SCHLÜSSELSICHERHEIT UND KOSTEN
+==============================================
+DATENSCHUTZ:
+Der Generator ist so angelegt, dass bei einem Gemini-Aufruf nicht
+automatisch die gesamte Kinderliste, der Schülername, die genaue
+Klassenstufe oder der gesamte Zeugnisbericht gesendet werden.
+
+Für die Formulierung können aber u. a. die eingegebenen Stichpunkte,
+die Bezeichnung des Themenbereichs, die Stilvorgabe und die allgemeine
+Sprachvorgabe übertragen werden. Bitte vor jeder Übertragung die
+angezeigte Bestätigung lesen.
+
+ACHTUNG: Auch Stichpunkte OHNE Namen können personenbezogen sein,
+wenn sich daraus ein Kind identifizieren lässt. Auch der Name eines
+Themenbereichs kann persönliche Informationen enthalten.
+
+Im kostenlosen Gemini-API-Tarif können übermittelte Inhalte von Google
+zur Verbesserung seiner Produkte verwendet werden. Für reale
+Schülerbeurteilungen sind die schulische Freigabe und eine Prüfung
+der Datenschutzvorgaben erforderlich. Bis dahin ausschließlich
+fiktive oder tatsächlich anonymisierte Testdaten übermitteln.
+
+API-SCHLÜSSEL:
+- Niemals in Chat-Nachrichten, Screenshots oder GitHub veröffentlichen.
+- Niemals fest in die öffentliche index.html einbauen.
+- Nur in das vorgesehene Eingabefeld der Webseite einfügen.
+- Der Generator speichert ihn nicht absichtlich in Kinderakten,
+  JSON-Sicherungen oder dauerhaftem Browserspeicher.
+- „API-Schlüssel aus dem Eingabefeld entfernen“ leert das Feld.
+- Bei Verdacht auf Missbrauch den Schlüssel in AI Studio sperren,
+  löschen oder neu erzeugen.
+- Eine direkte Browser-Anbindung kann den Schlüssel gegenüber
+  Personen mit Zugriff auf Browser/Endgerät offenlegen. Für eine
+  professionell abgesicherte Mehrbenutzeranwendung wäre ein
+  geschützter Server-Proxy sicherer.
+
+KOSTEN:
+- Der Zeugnistextgenerator selbst benötigt kein Abonnement.
+- Gemini 2.5 Flash-Lite bietet laut Google einen Free Tier.
+- Kontingente, verfügbare Modelle und Bedingungen können sich ändern.
+- „Kostenlos“ bedeutet NICHT „für immer garantiert kostenlos“.
+- Prüfe in AI Studio, ob das Projekt im kostenlosen Tarif läuft.
+- Bei aktivierter kostenpflichtiger Abrechnung können Kosten anfallen.
+- Bei überschrittenem Kontingent kann eine Fehlermeldung erscheinen.
+- Die Anwendung ist keine unabhängige Kosten- oder Tarifkontrolle.
+
+
+15. BERICHT ERSTELLEN UND BEARBEITEN
+===================================
+Der Button „Bericht erstellen / neu zusammensetzen“ kombiniert die
+aktuell vorgesehenen Inhalte, insbesondere:
+ - allgemeingültige Texte der Klassenbibliothek,
+ - ausgewählte wiederverwendbare Textbausteine,
+ - zur Übernahme markierte individuelle KI-Texte.
+
+Im Feld „Gesamter Bericht – frei bearbeitbar“ kannst du anschließend
+alle Sätze selbst bearbeiten, löschen, ergänzen oder umstellen.
+
+WICHTIG: „Neu zusammensetzen“ kann manuelle Änderungen am bisher
+bearbeiteten Gesamtbericht überschreiben. Deshalb einen bereits
+fertigen Text vorher kopieren oder als Datei sichern.
+
+Im fertigen Bericht sollen keine automatisch vorangestellten Namen
+oder Klassenstufen erscheinen. Bitte trotzdem auch den Inhalt selbst
+auf versehentlich eingegebene personenbezogene Angaben kontrollieren.
+
+
+16. EXPORT: WORD, PDF, PAGES UND TXT
+===================================
+Im Abschnitt „3. Bericht bearbeiten und speichern“ gibt es das Feld
+„Dateiformat wählen“ und den Button
+„Bericht im gewählten Format speichern“.
+
+WORD / DOCX:
+ 1) „Word (.docx)“ auswählen.
+ 2) Speichern anklicken.
+ 3) Die heruntergeladene .docx-Datei mit Word, LibreOffice oder
+    Apple Pages öffnen und bei Bedarf weiterbearbeiten.
+
+PDF:
+ 1) „PDF (über Drucken / Als PDF sichern)“ auswählen.
+ 2) Speichern anklicken.
+ 3) Der Browser öffnet eine Druckansicht bzw. den Druckdialog.
+ 4) Dort „Als PDF speichern“ wählen. Die genaue Bezeichnung ist
+    abhängig von Gerät und Browser.
+ 5) Auf dem iPad ggf. über Drucken, Vorschau und Teilen in der
+    Dateien-App als PDF sichern.
+
+APPLE PAGES:
+ 1) „Apple Pages (kompatible .docx)“ auswählen.
+ 2) Die kompatible Word-Datei herunterladen.
+ 3) In Apple Pages öffnen.
+ 4) In Pages selbst als Pages-Dokument sichern.
+
+WICHTIG: Der Generator erzeugt KEINE echte .pages-Datei direkt.
+Er liefert eine Pages-kompatible .docx-Datei.
+
+TXT:
+ - „TXT speichern“ lädt den Bericht als einfache Textdatei.
+ - „Text kopieren“ übernimmt den Text in die Zwischenablage.
+
+Die Exportfunktionen benötigen keine Gemini-API. Vor jedem Export
+prüfen, ob der richtige Bericht im Textfeld steht.
+
+
+17. KINDERLISTE, KLASSENBIBLIOTHEKEN UND JSON-SICHERUNGEN
+========================================================
+Es gibt mehrere Arten von JSON-Dateien:
+
+A) „Alle Kinder und Arbeitsstände als JSON sichern“
+   Enthält die Kinderverwaltung und die zugeordneten Arbeitsstände.
+
+B) „Alle Klassenbibliotheken exportieren“
+   Enthält die Bibliotheken aller zwölf Klassenstufen, darunter
+   Themenbereiche und wiederverwendbare Texte.
+
+C) „Eingaben als JSON sichern“ im Berichtsbereich
+   Sichert die dort vorgesehenen Eingaben / den aktuellen Stand.
+
+Die verschiedenen JSON-Exporte ersetzen einander NICHT automatisch.
+Für eine möglichst vollständige Sicherung mindestens die Kinderliste
+UND alle Klassenbibliotheken exportieren.
+
+Beim Import die passende Importfunktion verwenden:
+ - „Kinderliste importieren“ für Kinder und Arbeitsstände.
+ - „Klassenbibliotheken importieren“ für Bibliotheksdateien.
+ - „JSON wieder laden“ für die im Berichtsbereich erzeugte Datei.
+
+JSON-Sicherungen enthalten möglicherweise echte personenbezogene
+Schülerdaten. Nicht öffentlich auf GitHub hochladen und nicht
+ungeschützt weitergeben. Am besten in einem dafür freigegebenen,
+geschützten Speicherbereich ablegen.
+
+Der Browser speichert lokal. Wird der Browserverlauf einschließlich
+Websitedaten gelöscht oder ein anderes Gerät benutzt, sind diese
+lokalen Daten möglicherweise nicht vorhanden.
+
+
+18. BIBLIOTHEKEN KOPIEREN, IMPORTIEREN UND ZURÜCKSETZEN
+=======================================================
+Unter „2. Textbausteine“:
+
+„Sammlung kopieren aus Klasse“ + „In aktuelle Klasse kopieren“:
+ - Quellklasse auswählen.
+ - Aktuelle Zielklasse prüfen.
+ - Kopieren bestätigen.
+ - Achtung: Vorhandene Inhalte der Zielklasse können überschrieben
+   werden. Vorher alle Klassenbibliotheken exportieren.
+
+„Klassenbibliotheken importieren“:
+ - Eine passende JSON-Datei auswählen.
+ - Die Sicherheits- und Importhinweise beachten.
+ - Danach stichprobenartig mehrere Klassen kontrollieren.
+
+„Startzustand wiederherstellen (nur Einleitung und Abschluss)“:
+ - Setzt die betroffene Bibliothek auf einen Startzustand zurück.
+ - Eigene Bereiche und Texte können dadurch verloren gehen.
+ - Diese Funktion nur nach vorheriger Sicherung verwenden.
+
+
+19. DREI TYPISCHE ARBEITSABLÄUFE
+================================
+A) EINEN ALLGEMEINEN TEXT IN KLASSEN 4, 5 UND 6 VERWENDEN
+ 1) Neuen Bereich „Lesen“ anlegen.
+ 2) Allgemeingültigen Text eingeben.
+ 3) Klassen 4, 5, 6 markieren.
+ 4) Themenbereich erstellen.
+ 5) Ein Kind der Klasse 4 öffnen.
+ 6) Bericht neu zusammensetzen: allgemeiner Text wird berücksichtigt.
+ 7) Bei Bedarf in Klasse 5 den Text unabhängig anpassen.
+
+B) EINEN INDIVIDUELLEN KI-TEXT ERZEUGEN
+ 1) Gemini-Schlüssel in der geöffneten Seite eintragen.
+ 2) Fiktives Testkind auswählen.
+ 3) Themenbereich öffnen.
+ 4) Stichpunkte eingeben, Stil wählen und Gemini aufrufen.
+ 5) Übertragung bestätigen.
+ 6) Vorschlag bearbeiten und für den Bericht aktivieren.
+ 7) Bericht neu zusammensetzen und kontrollieren.
+
+C) EINEN FERTIGEN BERICHT SICHERN
+ 1) Kind und Zeitraum prüfen.
+ 2) Bericht erstellen oder gespeicherten Bericht öffnen.
+ 3) Text vollständig prüfen.
+ 4) Word, PDF oder Pages-kompatible DOCX auswählen.
+ 5) Datei speichern.
+ 6) Kinderliste und Klassenbibliotheken regelmäßig separat sichern.
+
+
+20. HÄUFIGE PROBLEME UND LÖSUNGEN
+================================
+„Die KI funktioniert nicht“:
+ - Ist eine Internetverbindung vorhanden?
+ - Ist der API-Schlüssel vollständig und korrekt eingefügt?
+ - Ist das Modell „gemini-2.5-flash-lite“ im Projekt verfügbar?
+ - Ist das kostenlose Kontingent erschöpft?
+ - Verhindern Browser, Netzwerk oder Schlüsselrestriktionen den
+   direkten API-Aufruf?
+ - Fehlermeldung lesen. Keinen geheimen Schlüssel in Screenshots zeigen.
+
+„API-Schlüssel ungültig“:
+ - Schlüssel in Google AI Studio prüfen oder neu erzeugen.
+ - Sicherstellen, dass ein Gemini-API-Schlüssel verwendet wird.
+ - Schlüssel ohne zusätzliche Leerzeichen einfügen.
+
+„Kontingent überschritten“ / Fehler 429:
+ - Später erneut versuchen oder in AI Studio das Kontingent prüfen.
+ - Nicht automatisch auf einen kostenpflichtigen Tarif wechseln.
+
+„Ich sehe den neuen Themenbereich nicht“:
+ - Richtige Klassenstufe auswählen.
+ - Prüfen, ob diese Klasse bei der Mehrfachauswahl markiert war.
+ - Ggf. die Seite neu laden und die Bibliothek kontrollieren.
+
+„Der allgemeine Text erscheint nicht im alten Bericht“:
+ - Bericht mit „Bericht erstellen / neu zusammensetzen“ aktualisieren.
+ - Achtung: Vorherige manuelle Änderungen können überschrieben werden.
+
+„Mein KI-Text erscheint nicht im Bericht“:
+ - Richtige Person und Zeitraum auswählen.
+ - Prüfen, ob die Übernahme des KI-Textes aktiviert ist.
+ - Bericht erneut zusammensetzen.
+
+„Meine Daten sind weg“:
+ - Prüfen, ob der richtige Browser und dasselbe Gerät genutzt werden.
+ - Prüfen, ob Websitedaten gelöscht wurden.
+ - Vorhandene JSON-Sicherungen mit der passenden Funktion importieren.
+
+„PDF lässt sich nicht direkt herunterladen“:
+ - PDF wird über die Druckfunktion des Browsers erstellt.
+ - Im Druckdialog „Als PDF speichern“ auswählen.
+
+„Ich finde keine .pages-Datei“:
+ - Zuerst die Pages-kompatible .docx-Datei herunterladen.
+ - Diese in Apple Pages öffnen und dort als Pages-Dokument sichern.
+
+„Hilfefenster verdeckt etwas“:
+ - Auf das Fragezeichen erneut tippen, außerhalb klicken oder
+   das Popup schließen. Danach normal weiterarbeiten.
+
+
+21. TECHNISCHE GRENZEN UND PRÜFSTATUS
+=====================================
+- Die Anwendung wird als einzelne HTML-Datei ausgeliefert.
+- Die normale Bedienung kann offline erfolgen; Gemini benötigt Internet.
+- Daten werden im lokalen Browser gespeichert und nicht automatisch
+  zwischen Geräten synchronisiert.
+- Ein direkter API-Aufruf aus dem Browser schützt einen eingegebenen
+  API-Schlüssel nicht so gut wie eine serverseitige Anbindung.
+- Gemini-Ergebnisse müssen von einer Lehrkraft geprüft werden.
+- Die PDF-Ausgabe erfolgt über die Druckfunktion des Browsers.
+- Der Pages-Export erzeugt eine kompatible DOCX, keine native .pages.
+- Kostenfreie API-Kontingente und Google-Oberflächen können sich ändern.
+- Bei Änderungen an Browser oder Google-API kann eine Anpassung der
+  Anwendung erforderlich werden.
+- Diese Dokumentationsversion übernimmt die HTML-Anwendung der
+  unmittelbar vorherigen Version unverändert. Ein neuer End-to-End-
+  Test der Gemini-API oder auf einem iPad wurde nicht durchgeführt.
+
+OFFIZIELLE LINKS
+----------------
+Google AI Studio / Schlüssel: https://aistudio.google.com/apikey
+Google API-Schlüssel-Doku:   https://ai.google.dev/gemini-api/docs/api-key
+Google Gemini-Preise:        https://ai.google.dev/gemini-api/docs/pricing
+Google API-Nutzungslimits:   https://ai.google.dev/gemini-api/docs/rate-limits
+GitHub-Repository:           https://github.com/beckertmarcus/zeugnis
+GitHub-Pages-Anwendung:      https://beckertmarcus.github.io/zeugnis/
+
+Anwendung erstellt mit ChatGPT · Copyright Marcus Beckert
+
+
+AKTUALISIERUNG: REDUZIERTE FRAGEZEICHEN-HILFE (19.11.2026)
+========================================================
+Die Hilfesymbole wurden nochmals reduziert. Jetzt gibt es maximal
+ein Fragezeichen an der Überschrift jedes Hauptbereichs und maximal
+ein Fragezeichen je dynamisch angelegtem Themenbereich.
+
+Alle Erklärungen und Hinweise eines Bereichs werden in EINEM Popup
+zusammengefasst. Dadurch stehen nicht mehr zwei oder drei Fragezeichen
+neben- oder untereinander. Die Popups lassen sich weiterhin anklicken
+und mit dem Schließen-Symbol, Escape oder einem Klick außerhalb schließen.
+
+Die übrigen Funktionen (Kinderverwaltung, Gemini, Klassenbibliotheken,
+allgemeingültige Texte und Exporte) wurden nicht verändert.
