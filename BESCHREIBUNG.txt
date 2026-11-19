@@ -1,0 +1,36 @@
+ZEUGNISTEXTGENERATOR – VERSION 10
+================================
+
+Installation auf GitHub Pages
+-----------------------------
+Die index.html aus diesem Paket in das bestehende GitHub-Pages-Repository hochladen bzw. die bisherige Datei ersetzen. Anschließend die Seite neu laden. Vor dem Update unbedingt unter „Einstellungen & Sicherung“ eine JSON-Gesamtsicherung erstellen. Der Generator benötigt für die lokale Nutzung keinen Server; nur Gemini-Anfragen brauchen eine Internetverbindung.
+
+Neu in Version 10
+-----------------
+1. Speichern: Im Kindereditor erscheint eine Statusmeldung mit Uhrzeit nach erfolgreichem Speichern. Speicherfehler werden als Warnung angezeigt. Die Texteingabe wird mit kurzer Verzögerung gespeichert; die bisherigen Speichern-Schaltflächen bleiben bestehen.
+2. Bericht-Aktualität: Änderungen an Fachtexten oder Textbausteinen markieren den Bericht als möglicherweise veraltet. Der Bericht kann über „Bericht erstellen / neu zusammensetzen“ aktualisiert werden. Vorherige Fassungen sollten bei manuellen Änderungen gesichert werden.
+3. Gemini: Fortschrittsmeldungen, „KI-Anfrage abbrechen“ und maximal ein automatischer Wiederholungsversuch bei vorübergehenden Fehlern. Nach Fehlern bleiben die Stichpunkte erhalten. 429/503 und Netzfehler können weiterhin auftreten; die Verfügbarkeit liegt bei Google.
+4. Pflichtformulierungen: Unter „Fächer“ kann man vorhandene eigene Textbausteine als Pflichtformulierungen kennzeichnen. Diese werden nicht automatisch eingefügt. Die Exportprüfung weist auf fehlende Formulierungen hin. Die Kennzeichnung gilt je Jahrgang und Text.
+5. Zeugnis-Check: Im Bericht werden Hinweise zu fehlenden Fachtexten, Einleitung/Abschluss, noch ungeprüften KI-Vorschlägen, fehlenden Pflichtformulierungen und einem möglicherweise veralteten Bericht angezeigt. Vor dem Einzelexport erscheint bei offenen Punkten eine Rückfrage. Die Prüfung ersetzt keine fachliche Endkontrolle.
+6. Klassenübersicht: Klassenkarten zeigen die Anzahl fertig markierter Kinder im Verhältnis zur Gesamtzahl und einen Fortschrittsbalken. Der Wert basiert auf dem vorhandenen Fertig-Status eines Kindes.
+7. Versionsgeschichte: Im Berichtsbereich können bis zu zwölf frühere Berichtsfassungen je Kind und Zeugniszeitraum wiederhergestellt werden. Eine neue Version wird vor dem Neuzusammensetzen und bei explizitem Speichern festgehalten. Die Versionsgeschichte ist kein Ersatz für eine externe Sicherung.
+8. Datenschutz und Sicherung: Die Einstellungsseite erinnert an die JSON-Gesamtsicherung und den Schutz von Schülerdaten. Die Gesamtsicherung enthält zusätzlich die Pflichtkennzeichnungen und die Versionsgeschichte. Der Browser speichert Daten lokal, aber nicht verschlüsselt. Für KI nur anonymisierte, von der Schule freigegebene Angaben übermitteln.
+
+Wichtige bestehende Funktionen
+------------------------------
+- Frei benennbare Klassen mit Kindern verschiedener Jahrgänge 1 bis 12.
+- Fächer zentral anlegen und Kindern einzeln oder gemeinsam zuordnen.
+- Fachtexte mit auswählbaren eigenen Textbausteinen, Pflichtformulierungen und optionaler Gemini-KI.
+- Gemini-KI auch für Einleitung und Abschluss, mit prüfbarer Vorschau.
+- Kinderauswahl, Einzel- und Klassenexport (DOCX, Pages-kompatible DOCX, PDF-Druckansicht, ZIP), Logo-Vorschau.
+- Ein Fragezeichen mit kontextbezogener Hilfe je Bereich.
+
+Grenzen und Hinweise
+--------------------
+- Ein vollständiger Browser-End-to-End-Test und ein Live-Test der Gemini-Schnittstelle sind nicht Bestandteil der automatischen Syntaxprüfung.
+- Die Pflichttextprüfung sucht nach dem wörtlichen Text im aktuellen Bericht; umformulierte Varianten werden gegebenenfalls als fehlend angezeigt.
+- Der Bericht wird nicht automatisch überschrieben, um manuelle Änderungen zu schützen.
+- Für eine sichere langfristige Aufbewahrung regelmäßig JSON-Gesamtsicherungen außerhalb des Browsers anfertigen.
+- Die Daten dürfen nur auf einem angemessen gesicherten Gerät verarbeitet werden; lokale Speicherung allein gewährleistet keine DSGVO-Konformität.
+
+Anwendung erstellt mit ChatGPT · Copyright Marcus Beckert
