@@ -1,0 +1,163 @@
+ZEUGNISTEXTGENERATOR – GITHUB-VERSION MIT GOOGLE GEMINI
+======================================================
+Stand: 19. November 2026
+Dateien: index.html und BESCHREIBUNG.txt
+
+1. WAS IST NEU?
+----------------
+Die Anwendung enthält eine optionale echte Google-Gemini-KI-Anbindung
+in JEDEM Themenbereich – auch in neu angelegten Themenbereichen.
+Eigene Themenbereiche starten jetzt OHNE vorgegebene Textbausteine.
+Die festen Rahmenbereiche Einleitungssatz und Abschlusssatz behalten
+je drei Startbausteine pro Zeitraum.
+
+Die normalen Funktionen sind weiterhin offline und kostenlos nutzbar.
+Nur die optionale KI-Anfrage benötigt Internet und einen eigenen
+Gemini-API-Schlüssel mit verfügbarem Kontingent.
+
+2. GEMINI EINRICHTEN
+-------------------
+1. Google AI Studio öffnen: https://aistudio.google.com/apikey
+2. Eigenen Gemini-API-Schlüssel erstellen.
+3. Den Schlüssel oben in der Anwendung eingeben (nicht in GitHub!).
+4. Modell auswählen, voreingestellt ist gemini-2.5-flash-lite.
+5. Ein Kind aus der Kinderliste auswählen oder neu anlegen.
+6. Im gewünschten Themenbereich Stichpunkte eingeben.
+7. Wertschätzenden, sachlichen oder förderorientierten Stil wählen.
+8. „Mit Gemini formulieren“ anklicken.
+9. Die Datenvorschau prüfen und die Übertragung bestätigen.
+10. KI-Vorschlag fachlich prüfen und im Textfeld bearbeiten.
+11. Häkchen „Diesen individuellen Text ... einfügen“ aktiv lassen.
+12. „Bericht erstellen / neu zusammensetzen“ anklicken.
+
+Die Anwendung überträgt die Stichpunkte direkt aus dem Browser an
+Google Gemini. Ein eigener Server ist dafür nicht vorgesehen.
+Ein API-Schlüssel ist im Browser grundsätzlich einsehbar. Deshalb
+nur einen eigenen, möglichst eingeschränkten Schlüssel verwenden,
+niemals in die öffentliche HTML-Datei schreiben oder bei GitHub
+veröffentlichen. Der Schlüssel wird weder in der Kinderliste noch
+in JSON-Dateien oder localStorage gespeichert. Nach einem Neuladen
+muss er erneut eingegeben werden.
+
+3. KOSTEN
+---------
+Google stellt für bestimmte Gemini-Modelle kostenlose API-Kontingente
+bereit. Verfügbarkeit, Modelle und Limits können sich ändern.
+Es gibt KEINE Garantie, dass die API dauerhaft kostenlos bleibt.
+Die Anwendung selbst richtet keine kostenpflichtige Buchung ein.
+Kosten und Tarifbedingungen des eigenen Google-Kontos müssen vor
+Nutzung geprüft werden. Die gesamte Offline-Grundversion funktioniert
+auch ohne API-Schlüssel weiter.
+
+4. SPRACHNIVEAU NACH KLASSENSTUFE
+--------------------------------
+Klassen 1–4: einfache, kindgerechte Sprache
+Klassen 5–7: altersgerechte, zunehmend differenzierte Sprache
+Klassen 8–10: sachliche, differenzierte Sprache
+Klassen 11–12: anspruchsvolle, präzise Sprache
+
+Die genaue Klassenstufe wird NICHT an die KI übermittelt. Der Generator
+leitet lokal daraus nur eine allgemeine Sprachvorgabe ab. Der Prompt
+verlangt konsequent die Du-Form, keine Namen, keine Klassenstufen,
+keine Anrede und keine erfundenen Leistungen oder Beobachtungen.
+KI-Texte sind Entwürfe und müssen immer von der Lehrkraft geprüft werden.
+
+5. DATENSCHUTZ UND ÜBERTRAGENE DATEN
+-----------------------------------
+Erst nach ausdrücklicher Bestätigung werden an Gemini gesendet:
+- Stichpunkte aus dem KI-Feld
+- Name des Themenbereichs
+- Formulierungsstil
+- allgemeine Sprachvorgabe und Textanweisungen
+
+NICHT automatisch übertragen werden:
+- Name des Kindes
+- genaue Klassenstufe
+- Kinderliste
+- andere Zeugnisse, Texte und gespeicherte Arbeitsstände
+
+WICHTIG: Auch Stichpunkte ohne Namen können personenbezogen sein,
+wenn sich ein Kind aus dem Kontext erkennen lässt. Auch der Name
+eines selbst angelegten Themenbereichs kann personenbezogene Angaben
+enthalten. Deshalb gibt es vor jeder Anfrage eine Datenvorschau.
+Der kostenlose Gemini-Tarif kann Daten zur Produktverbesserung nutzen.
+Vor Verarbeitung echter Schülerbeurteilungen ist eine schulische
+Datenschutzprüfung und Freigabe erforderlich. Bis dahin nur fiktive
+oder tatsächlich anonymisierte Daten verwenden.
+
+6. INDIVIDUELLE TEXTE JE KIND
+----------------------------
+Je Kind, Themenbereich und Zeitraum werden lokal gespeichert:
+- Stichpunkte
+- ausgewählter Formulierungsstil
+- KI-generierter und ggf. nachbearbeiteter Text
+- Häkchen für die Aufnahme in den Gesamtbericht
+- andere gewählte Textbausteine und der fertige Fließtext
+
+Die Texte lassen sich später öffnen und weiterbearbeiten. Wenn ein
+KI-Text bereits existiert, fragt die Anwendung vor dem Ersetzen nach.
+Das Löschen eines Kindes erfordert eine Sicherheitsabfrage.
+Regelmäßig die Kinderliste als JSON sichern.
+
+7. THEMENBEREICHE
+----------------
+Neue eigene Themenbereiche starten in Allgemein, 1. Halbjahr und
+2. Halbjahr mit NULL vorgegebenen Bausteinen. Die Lehrkraft kann:
+- eigene wiederverwendbare Bausteine anlegen
+- Stichpunkte in der KI-Hilfe formulieren lassen
+- einmalige Zusatzformulierungen eingeben
+- Inhalte bearbeiten und löschen
+
+Die beiden festen Bereiche Einleitungssatz und Abschlusssatz behalten
+ihre bisherigen Startbausteine und den Offline-Vorschlagsgenerator.
+Bereits gespeicherte Textbausteine aus älteren Versionen werden
+NICHT automatisch gelöscht, damit keine Arbeit verloren geht.
+Sie können bei Bedarf manuell gelöscht werden.
+
+8. BERICHT UND EXPORT
+--------------------
+„Bericht erstellen / neu zusammensetzen“ fügt die ausgewählten
+allgemeinen Bausteine, zusätzliche eigene Bausteine, angekreuzte
+KI-Texte und einmalige Zusatzformulierungen zusammen.
+Der NEU erzeugte Gesamtbericht enthält bewusst keinen Schülernamen
+und keine Klassenstufe als Vorspann. Der Name bleibt in der
+Kinderliste zur Zuordnung gespeichert. Bereits früher gespeicherte
+Berichte müssen bei Bedarf separat geprüft werden.
+TXT- und DOCX-Export bleiben vorhanden.
+
+9. KLASSENBIBLIOTHEKEN
+---------------------
+Die Klassen 1–12 besitzen weiterhin getrennte Themenbereiche und
+Bausteine. Mit der Kopierfunktion können Bibliotheken aus einer
+anderen Klassenstufe übernommen werden. Die Zielbibliothek wird
+dabei nach Bestätigung überschrieben. Der Bericht und individuelle
+KI-Texte gehören zum jeweiligen Kind, nicht zur Klassenbibliothek.
+
+10. GITHUB-PAGES-INSTALLATION
+----------------------------
+Repository: beckertmarcus/zeugnis
+Adresse: https://beckertmarcus.github.io/zeugnis/
+
+1. Zuerst Kinderliste und Klassenbibliotheken als JSON sichern.
+2. index.html im Repository durch die neue index.html ersetzen.
+3. BESCHREIBUNG.txt ebenfalls hochladen.
+4. Mit „Commit changes“ speichern.
+5. GitHub Pages neu laden.
+6. Gemini-Schlüssel erst auf der Webseite eingeben, NICHT auf GitHub.
+
+11. TESTS UND EINSCHRÄNKUNGEN
+----------------------------
+JavaScript-Syntax erfolgreich geprüft. Mit Headless Chromium wurden
+getestet: Kind anlegen, neuen leeren Themenbereich anlegen,
+individuellen KI-Text speichern und in den Fließtext übernehmen,
+Klassenbibliotheken trennen. Die KI-Anfrage wurde mit einer
+SIMULIERTEN Gemini-Antwort getestet. Dabei wurden Name und genaue
+Klassenstufe nicht in die Anfrage übernommen.
+
+Ein echter Gemini-Aufruf konnte mangels API-Schlüssel NICHT geprüft
+werden. Die Erreichbarkeit direkt aus GitHub Pages, mögliche
+Browserbeschränkungen und das Verhalten auf einem iPad sind noch
+zu testen. Falls die direkte Browseranbindung blockiert wird,
+zeigt die Anwendung eine Fehlermeldung.
+
+Footer: Anwendung erstellt mit ChatGPT · Copyright Marcus Beckert
