@@ -1,0 +1,59 @@
+ZEUGNISTEXTGENERATOR – SCHULVERWALTUNG V1 (ERSTER UMBAUSCHRITT)
+=============================================================
+
+WICHTIG: Dies ist die erste Ausbaustufe der neuen mehrseitigen Schulverwaltung. Die bisherige Zeugnistext-Erstellung wurde beibehalten und um eine neue Navigation ergänzt. Nicht alle geplanten Funktionen sind schon vollständig umgesetzt. Bitte die Daten vor dem Umstieg sichern und zunächst mit Testkindern prüfen.
+
+1. INSTALLATION
+---------------
+Die index.html in das GitHub-Pages-Repository hochladen und die bisherige Datei ersetzen. Eine Installation oder ein Server ist nicht erforderlich. Die Daten werden im Browser gespeichert. Bitte vor dem Wechsel beide bisherigen JSON-Sicherungen erstellen: Kinder/Arbeitsstände UND alle Klassenbibliotheken. Der API-Schlüssel ist in keiner Sicherung enthalten.
+
+2. NEUE NAVIGATION
+------------------
+Die Startseite „Meine Schule“ führt zu „Jahrgänge“, „Lerngruppen“ und „Datensicherung“. Es handelt sich um getrennte Ansichten innerhalb einer einzigen index.html, nicht um unterschiedliche Webseiten. Die alte Texterstellung erscheint erst, wenn ein Kind zur Bearbeitung geöffnet wird. Die Navigation ist auch auf kleineren Bildschirmen nutzbar.
+
+3. JAHRGÄNGE 1 BIS 12
+---------------------
+Kinder werden zuerst in ihrer tatsächlichen Klassenstufe angelegt. Ein Kind wird nur einmal erfasst und kann danach einer Lerngruppe zugeordnet werden. Die Jahrgangsansicht zeigt die bereits erfassten Kinder. Ein Kind lässt sich von dort zur Texterstellung öffnen.
+
+4. LERNGRUPPEN MIT FREIEM NAMEN
+------------------------------
+Unter „Lerngruppen“ kann eine Gruppe mit beliebigem Namen angelegt werden, z. B. Panda-Klasse, Igel-Klasse oder Lerngruppe A. Bei der Erstellung werden beliebige Jahrgänge von 1 bis 12 markiert (auch gemischte Jahrgänge). Nach dem Öffnen der Gruppe können Kinder aus den passenden Jahrgängen zugeordnet werden. Ein Kind kann einer Lerngruppe zugeordnet sein; beim Wechsel in eine andere Gruppe bleiben seine gespeicherten Zeugnisdaten erhalten. Der Name der Lerngruppe kann geändert werden. Jahrgang und Lerngruppe sind getrennte Merkmale.
+
+5. ZEUGNIS EINES KINDES
+-----------------------
+Ein Kind aus der Jahrgangs- oder Lerngruppenübersicht öffnen. Die bisherige Texterstellung steht weiterhin zur Verfügung: Einleitung, Abschluss, eigene Themenbereiche, auswählbare Textbausteine, individuelle Formulierungen, KI-Hilfe in eigenen Themenbereichen, bearbeitbarer Fließtext und Einzelexport. In der Lerngruppe kann über „Vorheriges Kind“ und „Nächstes Kind“ gewechselt werden. Der Status „Fertig“ lässt sich pro aktuell gewähltem Zeitraum setzen oder zurücknehmen. Dieser Status ist eine bewusste Bestätigung durch die Lehrkraft, keine automatische inhaltliche Qualitätsprüfung.
+
+6. THEMENBEREICHE / FÄCHER
+--------------------------
+Die bisherigen Themenbereiche werden weiter jahrgangsbezogen verwaltet. Bei einem Kind können einzelne Themenbereiche über „Themenbereich für dieses Kind berücksichtigen“ aktiviert werden. Nur aktivierte Bereiche fließen in die Zusammenstellung ein. Noch NICHT enthalten ist eine separate fachweise Mehrfachzuordnung aller Kinder direkt aus der Lerngruppenansicht. Diese ist für den nächsten Ausbauschritt vorgesehen.
+
+7. EXPORT
+---------
+Einzelausgabe in der Texterstellung: DOCX, PDF über den Druckdialog, und eine DOCX-Datei, die Apple Pages öffnen kann. Eine native .pages-Datei wird nicht erzeugt. Neu: Innerhalb einer Lerngruppe können alle gespeicherten Zeugnisse in einer gemeinsamen DOCX-Datei ausgegeben werden, ebenso Pages-kompatibel oder über eine gemeinsame Druckansicht als PDF. Der Export verwendet derzeit den zuletzt für jedes Kind ausgewählten Zeitraum. Leere Texte werden mit einem Platzhalter gekennzeichnet. Ein ZIP mit Einzeldateien, eine gemeinsame Zeitraumsauswahl und garantierte Seitenwechsel pro Kind sind für einen weiteren Ausbauschritt vorgesehen. Bitte Klassendokument vor Verwendung prüfen.
+
+8. GESAMTSICHERUNG
+------------------
+Unter „Einstellungen & Sicherung“ kann eine gemeinsame JSON-Sicherung erstellt werden. Sie umfasst die Lerngruppen, die Kinder einschließlich ihrer gespeicherten Arbeitsstände und die jahrgangsbezogenen Textbibliotheken. Die Wiederherstellung ersetzt nach Bestätigung die bestehenden Daten und lädt die Anwendung neu. Gemini-API-Schlüssel werden nicht exportiert. Bitte Sicherungen sicher aufbewahren; sie können personenbezogene Daten enthalten.
+
+9. OPTIONALE GEMINI-KI
+---------------------
+Die Einstellungen sind über „Gemini & Textbibliotheken öffnen“ erreichbar. Der dezente Link zur Erstellung eines API-Schlüssels lautet https://aistudio.google.com/apikey und öffnet einen neuen Tab. Die KI ist optional. In Einleitung und Abschluss gibt es keine KI-Funktion. In den übrigen Themenbereichen lassen sich Stichpunkte eingeben und KI-Entwürfe mit unterschiedlicher Textlänge erstellen. Vorschläge können ersetzt, ergänzt oder verworfen werden. Prüfen Sie die tatsächlich beim Google-Konto verfügbaren Modellnamen und Tarife. Übermitteln Sie keine personenbezogenen Schülerdaten ohne geeignete schulische Datenschutzfreigabe. Lokal gespeicherte API-Schlüssel sind nicht verschlüsselt.
+
+10. HILFE (?)
+-------------
+Die neuen Ansichten enthalten jeweils ein Fragezeichen mit einer knappen Erklärung. Die vorhandenen kontextbezogenen Hilfen in der Texterstellung bleiben erhalten. Auch die Informationen zu Lerngruppen, Jahrgängen und Sicherung sind hier dokumentiert.
+
+11. NOCH GEPLANTE SCHRITTE
+-------------------------
+- Schuljahre getrennt verwalten und „Nächstes Schuljahr vorbereiten“ mit Archivierung
+- Fächer direkt einer ganzen Lerngruppe und mehreren Kindern zuordnen
+- Statusübersicht und Vollständigkeitsprüfung vor dem Export
+- Klassenexport als ZIP mit einzelnen DOCX-Dateien und sauberer Seitenaufteilung
+- Übernahme und Prüfung älterer Datensicherungen in die neue Struktur
+- Erweiterte Hilfe und End-to-End-Tests auf iPad und weiteren Browsern
+
+12. WICHTIGE HINWEISE
+--------------------
+Die HTML-Datei funktioniert als GitHub-Pages-Einzeldatei. Sie enthält keinen Server und keine zentrale Schuldatenbank. Die lokale Browserablage kann beim Löschen von Website-Daten verloren gehen. Ein vollständiger Browser- und iPad-Funktionstest konnte für diesen ersten Umbau nicht abgeschlossen werden; die JavaScript-Syntax wurde geprüft. Bitte mit fiktiven Testdaten ausprobieren und vor produktiver Verwendung eigene Backups anlegen.
+
+Anwendung erstellt mit ChatGPT · Copyright Marcus Beckert
