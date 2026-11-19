@@ -1,0 +1,234 @@
+ZEUGNISTEXTGENERATOR – GITHUB-PAGES-VERSION
+==========================================
+Stand: 19. November 2026
+Dateien: index.html und BESCHREIBUNG.txt
+Repository: https://github.com/beckertmarcus/zeugnis
+Webseite: https://beckertmarcus.github.io/zeugnis/
+
+1. NEU: THEMENBEREICH MIT ALLGEMEINGÜLTIGEM TEXT
+------------------------------------------------
+Unter „2. Textbausteine“ -> „Neuen Themenbereich hinzufügen“ stehen
+jetzt drei Eingabebereiche zur Verfügung:
+
+  A. Name des Themenbereichs, z. B. „Lesen“.
+  B. Allgemeingültiger Text (optional), z. B.:
+     „Du setzt dich mit unterschiedlichen Textarten auseinander.“
+  C. Mehrfachauswahl der Klassenstufen 1 bis 12.
+
+Beispiel:
+  Themenbereich: Lesen
+  Allgemeiner Text: Du arbeitest im Bereich Lesen mit
+                    unterschiedlichen Texten.
+  Ausgewählte Klassen: 4, 5, 6
+
+Ein Klick auf „Themenbereich in ausgewählten Klassen erstellen“
+legt den Themenbereich mit dem allgemeinen Text in allen drei
+Klassenbibliotheken an. Es muss kein Kind ausgewählt sein.
+
+Der allgemeingültige Text wird in jeder dieser Klassen automatisch
+beim NEUEN ZUSAMMENSETZEN des Berichts für jedes Kind eingefügt,
+und zwar für „Allgemein“, „1. Halbjahr“ und „2. Halbjahr“.
+Der Text muss nicht angekreuzt werden.
+
+Der allgemeine Text ist freiwillig. Wird das Feld leer gelassen,
+startet der Themenbereich wie bisher ohne Textbausteine.
+
+WICHTIG: Bereits gespeicherte fertige Berichte bleiben unverändert.
+Der Text erscheint erst nach „Bericht erstellen / neu zusammensetzen“.
+Dieser Knopf überschreibt gegebenenfalls manuelle Änderungen im
+fertigen Bericht. Vorher den bisherigen Bericht sichern.
+
+2. ALLGEMEINEN TEXT SPÄTER ÄNDERN
+---------------------------------
+In jedem selbst angelegten Themenbereich gibt es ein Feld
+„Allgemeingültiger Text für jedes Kind (alle Zeiträume)“.
+Hier kann der Text jederzeit geändert, ergänzt oder entfernt werden.
+Zum Übernehmen „Allgemeinen Text speichern“ drücken.
+
+Die Änderung betrifft nur die gerade ausgewählte Klassenbibliothek.
+Die bei der Erstellung gewählten Klassen haben eigenständige Kopien.
+So kann derselbe Bereich in Klasse 4, 5 und 6 unterschiedliche
+allgemeine Texte enthalten.
+
+3. UNTERSCHIED ZWISCHEN DEN TEXTARTEN
+------------------------------------
+Allgemeingültiger Text:
+  - Gehört zur Klassenbibliothek und zum Themenbereich.
+  - Gilt für alle Kinder der jeweiligen Klasse.
+  - Wird beim Zusammensetzen automatisch eingefügt.
+  - Gilt in allen drei Zeiträumen.
+  - Wird ohne Gemini und ohne Internet genutzt.
+
+Eigener auswählbarer Textbaustein:
+  - Gehört zur Klassenbibliothek und zum aktuellen Zeitraum.
+  - Kann bei beliebigen Kindern angekreuzt werden.
+  - Wird nur eingefügt, wenn er ausgewählt wurde.
+
+Gemini-KI-Text:
+  - Entsteht aus individuellen Stichpunkten.
+  - Wird beim ausgewählten Kind und Zeitraum gespeichert.
+  - Kann nachträglich bearbeitet werden.
+  - Wird nur bei aktivierter Auswahl in den Bericht übernommen.
+  - Benötigt eine Internetverbindung und einen API-Schlüssel.
+
+4. KLASSENSTUFEN UND THEMENBEREICHE
+----------------------------------
+- Klassen 1 bis 12 haben getrennte Klassenbibliotheken.
+- Einleitungssatz und Abschlusssatz sind feste Rahmenbereiche.
+- Die beiden festen Bereiche haben anfangs jeweils drei
+  Startbausteine pro Zeitraum.
+- Neue eigene Themenbereiche haben keine vorgegebenen Bausteine.
+- Bei der Erstellung können beliebige Klassenstufen gleichzeitig
+  ausgewählt werden.
+- „Alle Klassen“ wählt 1 bis 12.
+- „Nur aktuelle Klasse“ setzt die Auswahl auf die aktuelle Klasse.
+- Existiert der neue Themenbereich bereits in einer der ausgewählten
+  Klassen, wird die Erstellung insgesamt abgebrochen. Bereits
+  vorhandene Bereiche und Texte werden nicht überschrieben.
+- Eigene Themenbereiche können umbenannt und gelöscht werden.
+- Feste Rahmenbereiche können nicht umbenannt oder gelöscht werden;
+  ihre Textbausteine können aber bearbeitet und gelöscht werden.
+- Eine komplette Klassenbibliothek kann nach Sicherheitsabfrage aus
+  einer anderen Klasse kopiert werden. Dabei wird die Zielbibliothek
+  überschrieben; die Quellklasse bleibt erhalten.
+- „Startzustand wiederherstellen“ setzt die aktuelle Bibliothek
+  zurück. Vorher unbedingt exportieren.
+
+5. TEXTBAUSTEINE UND OFFLINE-VORSCHLÄGE
+--------------------------------------
+- Textbausteine auswählen und einzeln bearbeiten oder löschen.
+- Wiederverwendbare eigene Textbausteine hinzufügen.
+- Drei verschiedene Startbausteine pro festem Rahmenbereich und
+  Zeitraum bei einer frischen Klassenbibliothek.
+- In den festen Rahmenbereichen weitere offline erzeugte
+  Formulierungsvorschläge anfordern und übernehmen.
+- Der Offline-Vorschlagsgenerator kombiniert 12 x 12 x 12
+  Bausteine, also bis zu 1.728 Kombinationen je Bereich und Zeitraum.
+- Formulierungen müssen fachlich geprüft werden.
+
+6. GEMINI-KI IN JEDEM THEMENBEREICH
+----------------------------------
+Die KI-Formulierungshilfe erscheint auch in selbst angelegten
+Themenbereichen. Eingabe von Stichpunkten, Stilwahl, Textvorschlag,
+Bearbeitung und Auswahl für den Gesamtbericht sind möglich.
+
+Einrichtung:
+  1. API-Schlüssel in Google AI Studio erstellen:
+     https://aistudio.google.com/apikey
+  2. Schlüssel in das Feld „Gemini-API-Schlüssel“ einfügen.
+  3. Modell auswählen (z. B. Gemini 2.5 Flash-Lite).
+  4. Kind und Themenbereich auswählen, Stichpunkte eingeben.
+  5. Übertragungsvorschau prüfen und ausdrücklich bestätigen.
+  6. KI-Vorschlag lesen, korrigieren und übernehmen.
+
+Die Anwendung sendet bei bestätigter KI-Anfrage:
+  - Stichpunkte,
+  - Bezeichnung des Themenbereichs,
+  - gewünschten Formulierungsstil,
+  - allgemeine Sprachvorgabe,
+  - technische Anweisung zur Du-Form.
+
+Die genaue Klassenstufe wird nicht übertragen. Stattdessen wird
+lokal eine allgemeine Sprachvorgabe ermittelt:
+  Klasse 1–4:   einfach und kindgerecht
+  Klasse 5–7:   altersgerecht und differenzierter
+  Klasse 8–10:  sachlich und differenziert
+  Klasse 11–12: anspruchsvoll und präzise
+
+Der Auftrag verlangt Du-Form, keine Namen, keine Klassenstufen,
+keine erfundenen Beobachtungen und keine Anrede. Trotzdem muss
+die Lehrkraft den Text vor Verwendung kontrollieren.
+
+DATENSCHUTZ: Auch namenlose Stichpunkte und selbst gewählte
+Themenbereichsnamen können personenbezogene Daten enthalten.
+Für echte Schülerdaten ist eine schulische Datenschutzfreigabe
+notwendig. Im kostenlosen Gemini-Tarif können Eingaben zur
+Produktverbesserung verwendet werden. Bis zur Freigabe nur
+fiktive oder tatsächlich anonymisierte Angaben verwenden.
+
+Der API-Schlüssel wird nicht in localStorage oder JSON-Dateien
+abgelegt. Er bleibt nur im Eingabefeld der geöffneten Seite.
+Ein Browser-Schlüssel kann dennoch auf dem Gerät eingesehen werden;
+keinen API-Schlüssel in index.html oder GitHub hinterlegen.
+Google kann kostenlose API-Kontingente oder Modelle ändern.
+Dauerhaft kostenlose KI-Nutzung ist nicht garantiert.
+
+7. KINDERVERWALTUNG
+-------------------
+- Kinder mit Namen, Anrede und Klassenstufe anlegen.
+- Gespeicherte Kinder auswählen und später weiterbearbeiten.
+- Ausgewählte Bausteine und KI-Entwürfe je Kind/Zeitraum sichern.
+- Fertige Berichte lokal je Kind/Zeitraum speichern.
+- Kinder nach Sicherheitsabfrage löschen.
+- Kinderliste und Arbeitsstände als JSON exportieren/importieren.
+- Namen und Klassenstufen dienen der internen Zuordnung und
+  erscheinen nicht automatisch im neu erzeugten Bericht.
+- Der allgemeingültige Text wird nicht beim einzelnen Kind,
+  sondern in der jeweiligen Klassenbibliothek gespeichert.
+
+8. BERICHT ERSTELLEN UND BEARBEITEN
+----------------------------------
+„Bericht erstellen / neu zusammensetzen“ fügt in der Reihenfolge
+der Themenbereiche zusammen:
+  1. Allgemeingültigen Text des Bereichs (automatisch),
+  2. ausgewählte Startbausteine,
+  3. ausgewählte eigene Textbausteine,
+  4. ausgewählten individuellen Gemini-Text.
+
+Der Gesamtbericht bleibt frei bearbeitbar. Er wird lokal beim
+gewählten Kind gespeichert. Erneutes Zusammensetzen überschreibt
+den derzeitigen Inhalt des Berichtsfeldes.
+
+9. EXPORT UND IMPORT
+--------------------
+Bericht:
+  - TXT-Datei direkt herunterladen.
+  - DOCX-Datei direkt herunterladen.
+  - PDF über die Browser-Druckansicht „Als PDF speichern“.
+  - Apple Pages: kompatible DOCX-Datei herunterladen, in Pages
+    öffnen und dort im nativen Pages-Format sichern.
+    Ein echtes .pages wird NICHT direkt erzeugt.
+  - Text in die Zwischenablage kopieren.
+
+Sicherungen:
+  - Alle zwölf Klassenbibliotheken gemeinsam als JSON exportieren.
+    Darin sind die allgemeingültigen Texte enthalten.
+  - Klassenbibliotheken als JSON importieren.
+  - Kinder und ihre Arbeitsstände als separate JSON sichern/importieren.
+  - Weitere JSON-Sicherungs-/Ladefunktionen des Berichts nutzen.
+
+ACHTUNG: Eine Sicherung nur der Kinderliste enthält NICHT die
+allgemeinen Klassenbibliothekstexte. Deshalb BEIDE Sicherungen
+regelmäßig erstellen und geschützt aufbewahren.
+
+10. OFFLINEBETRIEB UND SPEICHERUNG
+---------------------------------
+Der Generator selbst besteht aus einer einzigen HTML-Datei und
+lädt keine externen Bibliotheken. Textbausteine, Klassenbibliotheken,
+Kinderverwaltung, Bearbeitung und Exporte funktionieren offline.
+Nur die optionale Gemini-KI benötigt Internet.
+
+Lokale Daten liegen im Browser (localStorage). Sie können beim
+Löschen von Websitedaten oder beim Wechsel des Geräts verloren
+gehen. Der Speicher ist nicht verschlüsselt und ersetzt keine
+schulisch freigegebene Schüleraktenverwaltung.
+
+11. GITHUB PAGES AKTUALISIEREN
+-----------------------------
+  1. Kinderliste UND Klassenbibliotheken vorher als JSON sichern.
+  2. Im Repository beckertmarcus/zeugnis die index.html ersetzen.
+  3. BESCHREIBUNG.txt zusätzlich hochladen.
+  4. „Commit changes“ bestätigen.
+  5. GitHub Pages neu laden.
+  6. Die neuen Funktionen zunächst mit fiktiven Daten ausprobieren.
+
+12. TESTSTATUS
+--------------
+Die JavaScript-Syntax der neuen HTML-Datei wurde mit Node.js
+geprüft. Die automatische Übernahme des allgemeinen Textes ist
+im Quellcode implementiert. Ein vollständiger End-to-End-Test
+in einem echten Browser oder auf dem iPad sowie ein echter
+Gemini-API-Aufruf wurden für diese Änderung nicht durchgeführt.
+
+Fußzeile:
+Anwendung erstellt mit ChatGPT · Copyright Marcus Beckert
