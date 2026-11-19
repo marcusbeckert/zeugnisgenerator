@@ -1,0 +1,60 @@
+ZEUGNISTEXTGENERATOR – GITHUB-VERSION MIT KLASSENSTUFEN-MEHRFACHAUSWAHL
+Stand: 19. November 2026
+
+DATEIEN
+- index.html: vollständige GitHub-Pages-Webanwendung
+- BESCHREIBUNG.txt: diese Anleitung
+
+NEU: THEMENBEREICH IN MEHREREN KLASSENSTUFEN ANLEGEN
+1. In „2. Textbausteine“ den Abschnitt „Neuen Themenbereich hinzufügen“ öffnen.
+2. Namen eingeben, z. B. „Lesen“.
+3. Gewünschte Klassenstufen per Kontrollkästchen wählen, z. B. 4, 5 und 6.
+4. Auf „Themenbereich in ausgewählten Klassen erstellen“ klicken.
+5. Der Themenbereich wird gleichzeitig in den Bibliotheken dieser Klassen
+   angelegt, jeweils zwischen Einleitungssatz und Abschlusssatz.
+6. Er beginnt in allen gewählten Klassen ohne vorgegebene Textbausteine.
+7. In jeder Klasse kann er anschließend unabhängig bearbeitet, mit eigenen
+   Bausteinen oder KI-Texten ergänzt oder gelöscht werden.
+
+„Alle Klassen“ wählt 1 bis 12; „Nur aktuelle Klasse“ setzt die Auswahl zurück.
+Mindestens eine Klassenstufe muss angekreuzt sein.
+
+KINDERUNABHÄNGIG
+Die Mehrfachauswahl ändert ausschließlich Klassenbibliotheken, keine
+Kinderakten. Auch ohne ausgewähltes Kind kann ein Themenbereich angelegt
+werden. Ein Kind kann später einen KI-Text zu diesem Bereich erhalten.
+
+DOPPELTE NAMEN
+Existiert der Name bereits in einer der gewählten Klassen, wird die Aktion
+vollständig abgebrochen und die betroffenen Klassen werden angezeigt.
+So werden keine vorhandenen Themenbereiche überschrieben oder dupliziert.
+
+BESTEHENDE FUNKTIONEN
+- Klassenbibliotheken 1–12, getrennte Zeiträume
+- Einleitungssatz und Abschlusssatz mit ihren bisherigen Startbausteinen
+- Selbst angelegte Themenbereiche ohne Startbausteine
+- Individuelle Gemini-KI-Formulierungshilfe in jedem Themenbereich
+- KI-Text editieren, beim Kind speichern und im Bericht berücksichtigen
+- Kinderverwaltung und frei bearbeitbarer Bericht in Du-Form
+- DOCX-Export, PDF über Browserdruck, Pages-kompatibler DOCX-Export
+- TXT-Export sowie JSON-Sicherung und -Wiederherstellung
+- Offline-Nutzung ohne Gemini; Onlinezugang nur für KI-Aufrufe
+- Footer: Anwendung erstellt mit ChatGPT · Copyright Marcus Beckert
+
+GEMINI-HINWEISE
+Der API-Schlüssel wird nicht in JSON oder localStorage gespeichert.
+Die Nutzung des kostenlosen Gemini-Kontingents ist nicht dauerhaft
+zugesichert. Für echte Schülerbeurteilungen ist eine schulische
+Datenschutzfreigabe erforderlich; namenlose Stichpunkte können dennoch
+personenbezogene Informationen enthalten.
+
+GITHUB-PAGES-INSTALLATION
+1. Vorher Kinderliste und Klassenbibliotheken als JSON sichern.
+2. In beckertmarcus/zeugnis die bisherige index.html ersetzen.
+3. BESCHREIBUNG.txt optional ebenfalls hochladen.
+4. „Commit changes“ bestätigen.
+5. https://beckertmarcus.github.io/zeugnis/ neu laden.
+
+PRÜFUNG
+Die JavaScript-Syntax wird vor der Ausgabe mit node --check geprüft.
+Ein echter Gemini-API-Aufruf ist ohne privaten API-Schlüssel nicht testbar.
