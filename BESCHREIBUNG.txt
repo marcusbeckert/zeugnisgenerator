@@ -1,0 +1,99 @@
+ZEUGNISTEXTGENERATOR – PREMIUM NORDIC 11.7
+==========================================
+Stand: 20. November 2026
+
+DIESES PAKET IST DIE VOLLSTÄNDIGE GITHUB-PAGES-VERSION.
+
+DATEIEN
+index.html                  Anwendung und Programmlogik
+style.css                   Premium-Nordic-Gestaltung (unverändert)
+assets/gold-wave.svg        Goldene Wellenlinie
+assets/header-books.webp   Kopfbereich-Illustration
+assets/sidebar-ornament.webp  Ornament der Seitenleiste
+assets/.gitkeep             Platzhalter für den Assets-Ordner
+BESCHREIBUNG.txt            Diese Anleitung
+
+INSTALLATION
+1. Vor dem Update in der bisherigen Anwendung unter „Einstellungen & Sicherung“
+   eine JSON-Gesamtsicherung herunterladen und die Datei sicher aufbewahren.
+2. Den gesamten Inhalt des Paketordners ins Stammverzeichnis des
+   GitHub-Pages-Repositories hochladen (index.html, style.css, assets/).
+3. GitHub Pages aktualisieren lassen und die Seite mit neu geladenem Cache öffnen.
+4. Mit FIKTIVEN Schülerdaten die unten genannten Tests durchführen.
+5. Die vorhandenen Daten im Browser werden durch den Austausch der Dateien
+   nicht absichtlich gelöscht. Trotzdem ist die externe Sicherung unverzichtbar.
+
+NEU IN 11.7
+- Versionsbezeichnung in Fenstertitel und Kopfbereich auf 11.7 vereinheitlicht.
+- Zeiträume in Texten und Auswahlfeldern verständlich benannt:
+  „Allgemein“, „1. Halbjahr“, „2. Halbjahr“.
+  Die internen Kennungen general/first/second bleiben UNVERÄNDERT.
+- Bereits bearbeitete Gesamtzeugnisse werden beim Annehmen neuer KI-Fachtexte
+  nicht mehr automatisch neu zusammengesetzt und überschrieben.
+  Eine Meldung erinnert an die bewusste Neuzusammenstellung. Die bestehende
+  Versionsgeschichte und die Rückfrage vor manuellem Neuaufbau bleiben bestehen.
+- Klassenexporte warnen vor dem Download/Druck, wenn Zeugnisse leer oder
+  noch nicht als fertig markiert sind. Ein bewusster Export bleibt möglich.
+- Die doppelte Pages-Schaltfläche im Klassenexport ist ausgeblendet;
+  die normale DOCX-Datei kann weiterhin in Apple Pages geöffnet werden.
+- Der Gesamtsicherungsimport prüft das JSON-Format und grundlegende Strukturen,
+  zeigt die Zahl der enthaltenen Schüler/Klassen und legt VOR dem Überschreiben
+  nach Möglichkeit einen lokalen Wiederherstellungspunkt an.
+  Bei Speicherfehlern versucht er die vorherigen Werte zurückzusetzen.
+- Vor einem Schuljahreswechsel erscheint eine Vorschau mit Schülerzahlen,
+  Aufstiegen und voraussichtlich wegfallenden Klassenzuordnungen.
+  Zusätzlich wird ein lokaler Wiederherstellungspunkt angelegt.
+- Unter „Einstellungen & Sicherung“ gibt es eine einfache Ansicht für
+  archivierte Zeugnisse mit TXT-Download sowie Schaltflächen zum
+  Wiederherstellen der letzten lokalen Vor-Import-/Vor-Jahreswechsel-Stände.
+- Bestehende Designgrafiken, Farben, Navigation und Speicherkennungen bleiben
+  erhalten. Das neue ZtG-Markenlogo wurde bewusst NOCH NICHT eingebaut.
+
+WICHTIGE GRENZEN
+- Browser-localStorage ist nicht verschlüsselt und kann bei Browserlöschung,
+  Speicherproblemen oder privatem Modus verloren gehen. Die lokalen
+  Wiederherstellungspunkte sind KEIN Ersatz für externe JSON-Sicherungen.
+- Der Download einer JSON-Datei kann von der Anwendung nicht sicher als
+  tatsächlich erfolgreich gespeichert bestätigt werden.
+- Der neue Import prüft die grundlegende Datenstruktur, nicht jede mögliche
+  beschädigte oder fachlich unplausible Einzelinformation.
+- Der Schuljahreswechsel und Archiv-Viewer verwenden weiterhin das vorhandene
+  Datenmodell. Eine komplette Umstellung auf IndexedDB wurde NICHT durchgeführt.
+- Die vorhandene KI-Anbindung wurde nicht gegen die Google-API live getestet.
+  Gemini-Nutzung nur nach schulischer Datenschutzfreigabe und mit geeigneten,
+  anonymisierten Beobachtungen. API-Schlüssel nicht in GitHub-Dateien ablegen.
+- Bestehende Klassen- und Einzelexportlogik ist im Wesentlichen erhalten.
+  Eine vollständige Browser-/Praxistest-Suite wurde noch nicht durchgeführt.
+- Die Anwendung erzeugt Pages-kompatible DOCX, aber keine nativen .pages-Dateien.
+
+EMPFOHLENER KURZTEST MIT FIKTIVEN DATEN
+[ ] Neue Schule, Klasse und zwei Testschüler anlegen.
+[ ] Fach zuordnen, Text erstellen und Gesamtzeugnis manuell bearbeiten.
+[ ] Neuen KI-Fachtext übernehmen: bestehender Gesamttext bleibt erhalten.
+[ ] Zeugnis neu zusammensetzen: Rückfrage und Versionsgeschichte prüfen.
+[ ] Einzel- und Klassen-DOCX sowie ZIP exportieren und Dateien öffnen.
+[ ] Leeres/nicht fertiges Zeugnis: Exportwarnung prüfen.
+[ ] Gesamtsicherung herunterladen und in separatem Testbrowser importieren.
+[ ] Test-Schuljahreswechsel: Vorschau, Archivansicht und Wiederherstellung prüfen.
+[ ] Vor einem echten Einsatz: Datenbestand mit externer Sicherung vergleichen.
+
+GEPLANTE SPÄTERE VERBESSERUNGEN (NICHT BESTANDTEIL DIESER VERSION)
+- Automatisierte Browser-Tests und systematische Datenmigrationstests.
+- Durchgehende Bereinigung der älteren Bibliotheks- und Exportfunktionen.
+- Robuste Datenbankstruktur, ggf. IndexedDB, erst nach gesondertem Test.
+- Ausführlichere Archivsuche und Archivexport in DOCX/PDF.
+- Weitergehende KI-Textkontrolle auf inhaltliche Plausibilität.
+- Neues ZtG-Logo nach gemeinsamer Designentscheidung.
+
+URHEBERHINWEIS
+Anwendung erstellt mit ChatGPT · Copyright Marcus Beckert
+
+
+DESIGN-UPDATE (20.11.2026): Buchlogo ZtG als lokale SVG-Datei, navy-blaue Seitenleiste, hellblaue Wellen, goldene Akzente und neue Schul-Startkarte nach der freigegebenen Designvorschau. Alle bestehenden Funktionen aus 11.7 bleiben erhalten. Die neue Startkarte verlinkt auf Einstellungen & Sicherung. Hinweis: visuelle Annäherung an ein KI-Mockup, kein pixelgenaues Replikat.
+
+DESIGN-FEINSCHLIFF (20.11.2026)
+- Doppelte Überschrift „Meine Schule“ auf der Startseite entfernt.
+- Begrüßung, Einrichtungshinweis und drei Funktionskacheln erhalten.
+- Kontext-Hilfe in den Einrichtungshinweis versetzt.
+- Goldene Schwunglinie über der Begrüßung ergänzt (assets/header-gold-accent.svg).
+- Schulverwaltung, Navigation und Datenstruktur unverändert.
